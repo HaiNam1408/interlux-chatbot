@@ -1,0 +1,39 @@
+[
+    {
+        "id": "p1",
+        "name": "Sofa Elegance",
+        "description": "Sofa cao cấp với chất liệu da thật, thiết kế hiện đại và sang trọng.",
+        "price": 25000000,
+        "category": "sofa",
+        "features": [
+            "Da thật",
+            "Khung gỗ sồi",
+            "Bảo hành 5 năm"
+        ]
+    },
+    {
+        "id": "p2",
+        "name": "Bàn ăn Harmony",
+        "description": "Bàn ăn gỗ sồi tự nhiên, thiết kế tinh tế, phù hợp cho gia đình 6 người.",
+        "price": 15000000,
+        "category": "bàn ăn",
+        "features": [
+            "Gỗ sồi tự nhiên",
+            "Kích thước 180x90cm",
+            "Bảo hành 3 năm"
+        ]
+    },
+    {
+        "id": "p3",
+        "name": "Giường ngủ Luxury",
+        "description": "Giường ngủ king size với đầu giường bọc da, thiết kế sang trọng.",
+        "price": 35000000,
+        "category": "giường ngủ",
+        "features": [
+            "Kích thước 200x200cm",
+            "Đầu giường bọc da",
+            "Khung gỗ tự nhiên",
+            "Bảo hành 5 năm"
+        ]
+    }
+]

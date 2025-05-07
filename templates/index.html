@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interlux Chatbot - Tư vấn nội thất cao cấp</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --success-color: #27ae60;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .user-info {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .orders {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        
+        .orders h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .order-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .order-id {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .order-status {
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            background-color: var(--success-color);
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .chat-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        
+        .chat-header {
+            padding: 15px 20px;
+            background-color: var(--light-color);
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+        
+        .user .message-content {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bot .message-content {
+            background-color: var(--light-color);
+        }
+        
+        .chat-input {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+        
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .chat-input button:hover {
+            background-color: #d35400;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+        
+        .product-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .product-features {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        
+        .product-features span {
+            background-color: var(--light-color);
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                padding: 10px;
+            }
+            
+            .chat-container {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Interlux Chatbot</div>
+            <div class="user-info">
+                <h3>Thông tin khách hàng</h3>
+                <p id="user-name">Khách</p>
+                <p id="user-email"></p>
+            </div>
+            <div class="orders">
+                <h3>Đơn hàng của bạn</h3>
+                <div id="orders-list">
+                    <!-- Orders will be loaded here -->
+                    <p>Đăng nhập để xem đơn hàng</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Trợ lý ảo Interlux</h2>
+                <p>Hỗ trợ tư vấn nội thất cao cấp</p>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Xin chào! Tôi là trợ lý ảo của Interlux. Tôi có thể giúp gì cho bạn về nội thất cao cấp hôm nay?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Nhập tin nhắn của bạn...">
+                <button id="send-button">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store user session
+        let userId = localStorage.getItem('userId') || null;
+        let chatHistory = [];
+
+        // DOM elements
+        const chatMessages = document.getElementById('chat-messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const ordersList = document.getElementById('orders-list');
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Functions
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Add user message to chat
+            addMessageToChat('user', message);
+            messageInput.value = '';
+
+            // Show loading indicator
+            const loadingMessage = addMessageToChat('bot', '<div class="loading"></div>');
+
+            // Send message to server
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'message': message,
+                    'user_id': userId || ''
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove loading indicator
+                chatMessages.removeChild(loadingMessage);
+
+                // Add bot response to chat
+                addMessageToChat('bot', data.response);
+
+                // Store user ID if not already stored
+                if (!userId && data.user_id) {
+                    userId = data.user_id;
+                    localStorage.setItem('userId', userId);
+                    
+                    // Load user orders
+                    loadUserOrders(userId);
+                }
+
+                // Update chat history
+                chatHistory = data.history;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                chatMessages.removeChild(loadingMessage);
+                addMessageToChat('bot', 'Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại sau.');
+            });
+        }
+
+        function addMessageToChat(role, content) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.innerHTML = formatMessageContent(content);
+            
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            return messageDiv;
+        }
+
+        function formatMessageContent(content) {
+            // Format product information if present
+            if (typeof content === 'string' && content.includes('Sản phẩm:')) {
+                const parts = content.split('Sản phẩm:');
+                let formattedContent = parts[0];
+                
+                const productParts = parts[1].split('- Tên:');
+                for (let i = 1; i < productParts.length; i++) {
+                    const productInfo = '- Tên:' + productParts[i];
+                    const productCard = createProductCard(productInfo);
+                    formattedContent += productCard;
+                }
+                
+                return formattedContent;
+            }
+            
+            return content;
+        }
+
+        function createProductCard(productInfo) {
+            const lines = productInfo.split('\n');
+            let name = '', description = '', price = '', category = '', features = [];
+            
+            for (const line of lines) {
+                if (line.includes('- Tên:')) {
+                    name = line.replace('- Tên:', '').trim();
+                } else if (line.includes('Mô tả:')) {
+                    description = line.replace('Mô tả:', '').trim();
+                } else if (line.includes('Giá:')) {
+                    price = line.replace('Giá:', '').trim();
+                } else if (line.includes('Danh mục:')) {
+                    category = line.replace('Danh mục:', '').trim();
+                } else if (line.includes('Tính năng:')) {
+                    features = line.replace('Tính năng:', '').trim().split(',').map(f => f.trim());
+                }
+            }
+            
+            let featuresHtml = '';
+            if (features.length > 0) {
+                featuresHtml = '<div class="product-features">';
+                for (const feature of features) {
+                    featuresHtml += `<span>${feature}</span>`;
+                }
+                featuresHtml += '</div>';
+            }
+            
+            return `
+                <div class="product-card">
+                    <h4>${name}</h4>
+                    <p>${description}</p>
+                    <p class="product-price">${price}</p>
+                    <p>Danh mục: ${category}</p>
+                    ${featuresHtml}
+                </div>
+            `;
+        }
+
+        function loadUserOrders(userId) {
+            fetch(`/orders/${userId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No orders found');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.orders && data.orders.length > 0) {
+                        ordersList.innerHTML = '';
+                        data.orders.forEach(order => {
+                            const orderItem = document.createElement('div');
+                            orderItem.className = 'order-item';
+                            
+                            const orderContent = `
+                                <div class="order-id">Đơn hàng #${order.id}</div>
+                                <div class="order-status">${order.status}</div>
+                                <div class="order-total">Tổng: ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(order.total_amount)}</div>
+                            `;
+                            
+                            orderItem.innerHTML = orderContent;
+                            ordersList.appendChild(orderItem);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.log('Error loading orders:', error);
+                });
+        }
+
+        // Initialize - load user orders if user ID exists
+        if (userId) {
+            loadUserOrders(userId);
+        }
+    </script>
+</body>
+</html>

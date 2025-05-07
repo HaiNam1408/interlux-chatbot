@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Dịch vụ ChromaDB
+  chroma:
+    image: chromadb/chroma:latest
+    volumes:
+      - chroma-data:/chroma/chroma
+    ports:
+      - "8501:8000"
+    environment:
+      - ALLOW_RESET=true
+      - ANONYMIZED_TELEMETRY=false
+    networks:
+      - interlux-network
+
+  # Dịch vụ Chatbot
+  chatbot:
+    build: .
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    ports:
+      - "8502:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CHROMA_HOST=chroma
+      - CHROMA_PORT=8000
+    depends_on:
+      - chroma
+    networks:
+      - interlux-network
+
+volumes:
+  chroma-data:
+    driver: local
+
+networks:
+  interlux-network:
+    driver: bridge

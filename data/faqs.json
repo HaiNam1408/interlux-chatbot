@@ -1,0 +1,22 @@
+[
+    {
+        "id": "faq1",
+        "question": "Làm thế nào để đặt hàng?",
+        "answer": "Khách hàng có thể đặt hàng trực tiếp trên website, qua hotline 1900xxxx, hoặc đến trực tiếp showroom của Interlux."
+    },
+    {
+        "id": "faq2",
+        "question": "Thời gian giao hàng là bao lâu?",
+        "answer": "Thời gian giao hàng thông thường là 3-5 ngày đối với sản phẩm có sẵn, và 15-30 ngày đối với sản phẩm đặt hàng riêng."
+    },
+    {
+        "id": "faq3",
+        "question": "Có dịch vụ lắp đặt không?",
+        "answer": "Có, Interlux cung cấp dịch vụ lắp đặt miễn phí cho tất cả các sản phẩm nội thất."
+    },
+    {
+        "id": "faq4",
+        "question": "Làm thế nào để chăm sóc và bảo quản sản phẩm nội thất?",
+        "answer": "Mỗi sản phẩm sẽ có hướng dẫn chăm sóc và bảo quản riêng. Nhìn chung, nên tránh ánh nắng trực tiếp, độ ẩm cao, và vệ sinh thường xuyên bằng các sản phẩm chuyên dụng."
+    }
+]
