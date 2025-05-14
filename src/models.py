@@ -22,14 +22,26 @@ class UserSession(BaseModel):
     def get_chat_history(self):
         return "\n".join([f"{msg.role.capitalize()}: {msg.content}" for msg in self.messages])
 
+class ProductModel(BaseModel):
+    file: str
+    format: str
+
 class Product(BaseModel):
-    id: str
-    name: str
+    id: int
+    title: str
+    slug: str
     description: str
     price: float
+    percentOff: Optional[int] = 0
+    sold: Optional[int] = 0
+    attributes: Dict[str, str] = {}
     category: str
-    image_url: Optional[str] = None
-    features: List[str] = []
+    model: Optional[ProductModel] = None
+    images: List[str] = []
+    sort: Optional[int] = 0
+    status: str = "PUBLISHED"
+    createdAt: Optional[datetime] = None
+    updatedAt: Optional[datetime] = None
 
 class Order(BaseModel):
     id: str

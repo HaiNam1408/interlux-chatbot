@@ -18,5 +18,35 @@
         "id": "pol4",
         "title": "Chính sách thanh toán",
         "content": "Khách hàng có thể thanh toán bằng tiền mặt, chuyển khoản ngân hàng, hoặc thẻ tín dụng. Đối với đơn hàng trên 50 triệu đồng, khách hàng có thể thanh toán trả góp với lãi suất 0% trong 6 tháng đầu."
+    },
+    {
+        "id": "pol5",
+        "title": "Chính sách lắp đặt",
+        "content": "Interlux cung cấp dịch vụ lắp đặt miễn phí cho tất cả sản phẩm nội thất tại Hà Nội và TP.HCM. Đối với các khu vực khác, phí lắp đặt sẽ được tính dựa trên loại sản phẩm và khoảng cách địa lý."
+    },
+    {
+        "id": "pol6",
+        "title": "Chính sách chăm sóc khách hàng",
+        "content": "Interlux cam kết hỗ trợ khách hàng 24/7 qua hotline, email, hoặc chat trực tuyến. Đội ngũ chăm sóc khách hàng sẽ giải đáp mọi thắc mắc và cung cấp dịch vụ hậu mãi chuyên nghiệp."
+    },
+    {
+        "id": "pol7",
+        "title": "Chính sách bảo vệ dữ liệu",
+        "content": "Interlux cam kết bảo vệ thông tin cá nhân của khách hàng. Dữ liệu chỉ được sử dụng cho mục đích xử lý đơn hàng, giao hàng, và cung cấp ưu đãi cá nhân hóa, tuân thủ các quy định pháp luật hiện hành."
+    },
+    {
+        "id": "pol8",
+        "title": "Chính sách chương trình khách hàng thân thiết",
+        "content": "Khách hàng tham gia chương trình khách hàng thân thiết của Interlux sẽ được tích điểm cho mỗi giao dịch. Điểm tích lũy có thể đổi lấy voucher giảm giá hoặc các dịch vụ ưu tiên như giao hàng nhanh."
+    },
+    {
+        "id": "pol9",
+        "title": "Chính sách đặt hàng tùy chỉnh",
+        "content": "Interlux cung cấp dịch vụ thiết kế và sản xuất nội thất theo yêu cầu. Khách hàng cần đặt cọc 50% giá trị đơn hàng, và thời gian sản xuất dao động từ 4-8 tuần tùy thuộc vào thiết kế."
+    },
+    {
+        "id": "pol10",
+        "title": "Chính sách bảo trì sản phẩm",
+        "content": "Interlux cung cấp hướng dẫn bảo trì chi tiết kèm theo mỗi sản phẩm. Ngoài ra, chúng tôi cung cấp dịch vụ bảo trì định kỳ với chi phí hợp lý cho các sản phẩm da, gỗ, và vải."
     }
 ]

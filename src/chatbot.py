@@ -35,7 +35,7 @@ class Chatbot:
         4. Trả lời câu hỏi: Giải đáp các thắc mắc của khách hàng về sản phẩm và dịch vụ.
         5. Gợi ý sản phẩm: Đề xuất sản phẩm phù hợp dựa trên nhu cầu của khách hàng.
         
-        Hãy trả lời một cách lịch sự, chuyên nghiệp và hữu ích. Nếu không biết câu trả lời, hãy thành thật và đề nghị kết nối với nhân viên hỗ trợ.
+        Hãy trả lời một cách lịch sự, chuyên nghiệp và hữu ích. Nếu không biết câu trả lời, hãy thành thật.
         
         Khi trả lời, hãy sử dụng thông tin từ cơ sở dữ liệu được cung cấp. Không được tự ý tạo ra thông tin không có trong dữ liệu.
         """
@@ -100,11 +100,10 @@ class Chatbot:
         if "products" in context and context["products"]:
             formatted_context += "\nSản phẩm:\n"
             for product in context["products"]:
-                formatted_context += f"- Tên: {product['name']}\n"
+                formatted_context += f"- Tên: {product['title']}\n"
                 formatted_context += f"  Mô tả: {product['description']}\n"
                 formatted_context += f"  Giá: {product['price']} VND\n"
-                formatted_context += f"  Danh mục: {product['category']}\n"
-                formatted_context += f"  Tính năng: {', '.join(product['features'])}\n"
+                formatted_context += f"  Thuộc tính: {', '.join(product['attributes'])}\n"
         
         if "policies" in context and context["policies"]:
             formatted_context += "\nChính sách:\n"
@@ -123,7 +122,6 @@ class Chatbot:
                 formatted_context += f"- Tên: {product['name']}\n"
                 formatted_context += f"  Mô tả: {product['description']}\n"
                 formatted_context += f"  Giá: {product['price']} VND\n"
-                formatted_context += f"  Danh mục: {product['category']}\n"
                 formatted_context += f"  Tính năng: {', '.join(product['features'])}\n"
         
         if "orders" in context and context["orders"]:

@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Dịch vụ ChromaDB
   chroma:
     image: chromadb/chroma:latest
     volumes:
@@ -14,7 +13,6 @@ services:
     networks:
       - interlux-network
 
-  # Dịch vụ Chatbot
   chatbot:
     build: .
     volumes:

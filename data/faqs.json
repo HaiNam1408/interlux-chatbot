@@ -2,7 +2,7 @@
     {
         "id": "faq1",
         "question": "Làm thế nào để đặt hàng?",
-        "answer": "Khách hàng có thể đặt hàng trực tiếp trên website, qua hotline 1900xxxx, hoặc đến trực tiếp showroom của Interlux."
+        "answer": "Khách hàng có thể đặt hàng trực tiếp trên website, qua hotline 0986838383, hoặc đến trực tiếp showroom của Interlux."
     },
     {
         "id": "faq2",
@@ -18,5 +18,35 @@
         "id": "faq4",
         "question": "Làm thế nào để chăm sóc và bảo quản sản phẩm nội thất?",
         "answer": "Mỗi sản phẩm sẽ có hướng dẫn chăm sóc và bảo quản riêng. Nhìn chung, nên tránh ánh nắng trực tiếp, độ ẩm cao, và vệ sinh thường xuyên bằng các sản phẩm chuyên dụng."
+    },
+    {
+        "id": "faq5",
+        "question": "Tôi có thể thanh toán bằng những hình thức nào?",
+        "answer": "Khách hàng có thể thanh toán bằng tiền mặt, chuyển khoản ngân hàng, hoặc thẻ tín dụng. Đối với đơn hàng trên 50 triệu đồng, Interlux hỗ trợ thanh toán trả góp với lãi suất 0% trong 6 tháng đầu."
+    },
+    {
+        "id": "faq6",
+        "question": "Chính sách bảo hành của Interlux như thế nào?",
+        "answer": "Tất cả sản phẩm nội thất của Interlux được bảo hành từ 1-5 năm tùy theo loại sản phẩm. Khách hàng cần giữ hóa đơn và phiếu bảo hành để được hỗ trợ khi cần thiết."
+    },
+    {
+        "id": "faq7",
+        "question": "Tôi có thể đổi trả sản phẩm không?",
+        "answer": "Khách hàng có thể đổi trả sản phẩm trong vòng 7 ngày kể từ ngày nhận hàng nếu sản phẩm có lỗi từ nhà sản xuất. Sản phẩm đổi trả phải còn nguyên vẹn, không có dấu hiệu đã qua sử dụng."
+    },
+    {
+        "id": "faq8",
+        "question": "Interlux có hỗ trợ thiết kế nội thất tùy chỉnh không?",
+        "answer": "Có, Interlux cung cấp dịch vụ thiết kế và sản xuất nội thất theo yêu cầu. Khách hàng cần đặt cọc 50% và thời gian sản xuất thường từ 4-8 tuần tùy thuộc vào thiết kế."
+    },
+    {
+        "id": "faq9",
+        "question": "Chương trình khách hàng thân thiết của Interlux là gì?",
+        "answer": "Chương trình khách hàng thân thiết của Interlux cho phép tích điểm với mỗi giao dịch. Điểm tích lũy có thể đổi lấy voucher giảm giá hoặc dịch vụ ưu tiên như giao hàng nhanh."
+    },
+    {
+        "id": "faq10",
+        "question": "Làm thế nào để liên hệ với bộ phận hỗ trợ khách hàng?",
+        "answer": "Khách hàng có thể liên hệ qua hotline 0986838383, email support@interlux.vn, hoặc chat trực tiếp trên website. Bộ phận hỗ trợ hoạt động 24/7 để giải đáp mọi thắc mắc."
     }
 ]

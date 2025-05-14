@@ -1,26 +1,26 @@
 # Interlux Chatbot
 
-Chatbot hỗ trợ tư vấn bán hàng và trả lời câu hỏi cho hệ thống bán hàng nội thất cao cấp Interlux.
+A chatbot for sales consulting and answering questions for the Interlux luxury furniture sales system.
 
-## Tính năng
+## Features
 
-- Tư vấn bán hàng: Giới thiệu sản phẩm, tính năng, giá cả
-- Tư vấn chính sách: Cung cấp thông tin về chính sách bảo hành, đổi trả, vận chuyển, thanh toán
-- Quản lý đơn hàng: Giúp khách hàng kiểm tra trạng thái đơn hàng, lịch sử mua hàng
-- Trả lời câu hỏi: Giải đáp các thắc mắc của khách hàng về sản phẩm và dịch vụ
-- Gợi ý sản phẩm: Đề xuất sản phẩm phù hợp dựa trên nhu cầu của khách hàng
+- Sales consulting: Introduce products, features, prices
+- Policy advising: Provide information about warranty, return, shipping, and payment policies
+- Order management: Help customers check order status and purchase history
+- Customer Q&A: Answer customer inquiries about products and services
+- Product recommendations: Suggest suitable products based on customer needs
 
-## Công nghệ sử dụng
+## Technologies Used
 
-- FastAPI: Framework web API
-- Gemini API: Xử lý ngôn ngữ tự nhiên
-- ChromaDB: Vector database cho RAG (Retrieval-Augmented Generation)
-- Sentence Transformers: Mô hình nhúng văn bản
+- FastAPI: Web API framework
+- Gemini API: Natural language processing
+- ChromaDB: Vector database for RAG (Retrieval-Augmented Generation)
+- Sentence Transformers: Text embedding model
 - Docker: Containerization
 
-## Cài đặt
+## Installation
 
-### Phương pháp 1: Sử dụng Docker (Khuyến nghị)
+### Method 1: Using Docker (Recommended)
 
 1. Clone repository:
 ```
@@ -28,22 +28,22 @@ git clone https://github.com/your-username/interlux-chatbot.git
 cd interlux-chatbot
 ```
 
-2. Tạo file `.env` và thêm API key của Gemini:
+2. Create `.env` file and add your Gemini API key:
 ```
 GOOGLE_API_KEY=your_gemini_api_key_here
 CHROMA_HOST=chroma
 CHROMA_PORT=8000
 ```
 
-3. Chạy ứng dụng với Docker Compose:
+3. Run the application with Docker Compose:
 ```
 docker-compose up -d
 ```
 
-4. Truy cập ứng dụng tại: http://localhost:8502
-   - ChromaDB UI có thể truy cập tại: http://localhost:8501
+4. Access the application at: http://localhost:8502
+   - ChromaDB UI can be accessed at: http://localhost:8501
 
-### Phương pháp 2: Cài đặt trực tiếp
+### Method 2: Direct Installation
 
 1. Clone repository:
 ```
@@ -51,85 +51,85 @@ git clone https://github.com/your-username/interlux-chatbot.git
 cd interlux-chatbot
 ```
 
-2. Cài đặt các thư viện cần thiết:
+2. Install required libraries:
 ```
 pip install -r requirements.txt
 ```
 
-3. Tạo file `.env` và thêm API key của Gemini:
+3. Create `.env` file and add your Gemini API key:
 ```
 GOOGLE_API_KEY=your_gemini_api_key_here
 CHROMA_DB_PATH=./data/chroma_db
 ```
 
-4. Chạy ứng dụng:
+4. Run the application:
 ```
 python main.py
 ```
 
-5. Truy cập ứng dụng tại: http://localhost:8502
+5. Access the application at: http://localhost:8502
 
-## Cấu trúc dự án
+## Project Structure
 
 ```
 interlux-chatbot/
-├── data/                  # Thư mục chứa dữ liệu
-│   ├── chroma_db/         # Vector database (khi chạy local)
-│   ├── products.json      # Dữ liệu sản phẩm
-│   ├── policies.json      # Dữ liệu chính sách
-│   ├── faqs.json          # Dữ liệu câu hỏi thường gặp
-│   ├── users.json         # Dữ liệu người dùng
-│   └── orders.json        # Dữ liệu đơn hàng
-├── src/                   # Mã nguồn
-│   ├── chatbot.py         # Logic chatbot
-│   ├── database.py        # Xử lý dữ liệu
-│   └── models.py          # Định nghĩa model
-├── static/                # File tĩnh (CSS, JS, hình ảnh)
-├── templates/             # Template HTML
-│   └── index.html         # Giao diện người dùng
-├── .dockerignore          # Cấu hình Docker ignore
-├── .env                   # Biến môi trường
-├── docker-compose.yml     # Cấu hình Docker Compose
-├── Dockerfile             # Cấu hình Docker
-├── main.py                # File chính
-└── requirements.txt       # Thư viện cần thiết
+├── data/                  # Data directory
+│   ├── chroma_db/         # Vector database (when running locally)
+│   ├── products.json      # Product data
+│   ├── policies.json      # Policy data
+│   ├── faqs.json          # FAQ data
+│   ├── users.json         # User data
+│   └── orders.json        # Order data
+├── src/                   # Source code
+│   ├── chatbot.py         # Chatbot logic
+│   ├── database.py        # Data handling
+│   └── models.py          # Model definitions
+├── static/                # Static files (CSS, JS, images)
+├── templates/             # HTML templates
+│   └── index.html         # User interface
+├── .dockerignore          # Docker ignore configuration
+├── .env                   # Environment variables
+├── docker-compose.yml     # Docker Compose configuration
+├── Dockerfile             # Docker configuration
+├── main.py                # Main file
+└── requirements.txt       # Required libraries
 ```
 
-## Hướng dẫn sử dụng
+## Usage Guide
 
-1. Truy cập ứng dụng tại http://localhost:8502
-2. Nhập câu hỏi hoặc yêu cầu vào ô chat
-3. Chatbot sẽ phân tích ý định và trả lời dựa trên dữ liệu có sẵn
-4. Đối với quản lý đơn hàng, chatbot sẽ hiển thị thông tin đơn hàng của người dùng
+1. Access the application at http://localhost:8502
+2. Enter your question or request in the chat box
+3. The chatbot will analyze your intent and respond based on available data
+4. For order management, the chatbot will display the user's order information
 
-## Quản lý Docker
+## Docker Management
 
-### Khởi động dịch vụ
+### Start services
 ```
 docker-compose up -d
 ```
 
-### Xem logs
+### View logs
 ```
 docker-compose logs -f
 ```
 
-### Dừng dịch vụ
+### Stop services
 ```
 docker-compose down
 ```
 
-### Xóa dữ liệu và khởi động lại
+### Delete data and restart
 ```
 docker-compose down -v
 docker-compose up -d
 ```
 
-## Phát triển thêm
+## Future Development
 
-- Thêm xác thực người dùng
-- Tích hợp với hệ thống thanh toán
-- Thêm tính năng đặt hàng trực tiếp qua chatbot
-- Cải thiện giao diện người dùng
-- Thêm tính năng phân tích cảm xúc người dùng
-- Mở rộng vector database để xử lý dữ liệu lớn hơn
+- Add user authentication
+- Integrate with payment systems
+- Add direct ordering through the chatbot
+- Improve user interface
+- Add user sentiment analysis
+- Expand vector database to handle larger datasets

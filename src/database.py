@@ -4,7 +4,6 @@ from typing import List, Dict, Optional
 from dotenv import load_dotenv
 from datetime import datetime
 
-# Load environment variables
 load_dotenv()
 
 # Create data directory if it doesn't exist
@@ -90,32 +89,7 @@ os.makedirs("./data", exist_ok=True)
 def initialize_data_files():
     # Sample products
     if not os.path.exists(PRODUCTS_FILE):
-        sample_products = [
-            {
-                "id": "p1",
-                "name": "Sofa Elegance",
-                "description": "Sofa cao cấp với chất liệu da thật, thiết kế hiện đại và sang trọng.",
-                "price": 25000000,
-                "category": "sofa",
-                "features": ["Da thật", "Khung gỗ sồi", "Bảo hành 5 năm"]
-            },
-            {
-                "id": "p2",
-                "name": "Bàn ăn Harmony",
-                "description": "Bàn ăn gỗ sồi tự nhiên, thiết kế tinh tế, phù hợp cho gia đình 6 người.",
-                "price": 15000000,
-                "category": "bàn ăn",
-                "features": ["Gỗ sồi tự nhiên", "Kích thước 180x90cm", "Bảo hành 3 năm"]
-            },
-            {
-                "id": "p3",
-                "name": "Giường ngủ Luxury",
-                "description": "Giường ngủ king size với đầu giường bọc da, thiết kế sang trọng.",
-                "price": 35000000,
-                "category": "giường ngủ",
-                "features": ["Kích thước 200x200cm", "Đầu giường bọc da", "Khung gỗ tự nhiên", "Bảo hành 5 năm"]
-            }
-        ]
+        sample_products = []
         with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
             json.dump(sample_products, f, ensure_ascii=False, indent=4)
 
@@ -123,7 +97,7 @@ def initialize_data_files():
         if VECTOR_DB_ENABLED:
             try:
                 for product in sample_products:
-                    product_text = f"{product['name']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
+                    product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
                     product_collection.add(
                         documents=[product_text],
                         metadatas=[product],
@@ -135,75 +109,19 @@ def initialize_data_files():
 
     # Sample users
     if not os.path.exists(USERS_FILE):
-        sample_users = [
-            {
-                "id": "u1",
-                "name": "Nguyễn Văn A",
-                "email": "nguyenvana@example.com",
-                "phone": "0901234567"
-            },
-            {
-                "id": "u2",
-                "name": "Trần Thị B",
-                "email": "tranthib@example.com",
-                "phone": "0909876543"
-            }
-        ]
+        sample_users = []
         with open(USERS_FILE, "w", encoding="utf-8") as f:
             json.dump(sample_users, f, ensure_ascii=False, indent=4)
 
     # Sample orders
     if not os.path.exists(ORDERS_FILE):
-        sample_orders = [
-            {
-                "id": "o1",
-                "user_id": "u1",
-                "products": [
-                    {"product_id": "p1", "quantity": 1, "price": 25000000}
-                ],
-                "total_amount": 25000000,
-                "status": "Đã giao hàng",
-                "created_at": datetime.now().isoformat()
-            },
-            {
-                "id": "o2",
-                "user_id": "u2",
-                "products": [
-                    {"product_id": "p2", "quantity": 1, "price": 15000000},
-                    {"product_id": "p3", "quantity": 1, "price": 35000000}
-                ],
-                "total_amount": 50000000,
-                "status": "Đang xử lý",
-                "created_at": datetime.now().isoformat()
-            }
-        ]
+        sample_orders = []
         with open(ORDERS_FILE, "w", encoding="utf-8") as f:
             json.dump(sample_orders, f, ensure_ascii=False, indent=4)
 
     # Sample policies
     if not os.path.exists(POLICIES_FILE):
-        sample_policies = [
-            {
-                "id": "pol1",
-                "title": "Chính sách bảo hành",
-                "content": "Tất cả sản phẩm nội thất của Interlux đều được bảo hành từ 1-5 năm tùy theo loại sản phẩm. Khách hàng cần giữ hóa đơn và phiếu bảo hành để được hỗ trợ khi cần thiết."
-            },
-            {
-                "id": "pol2",
-                "title": "Chính sách đổi trả",
-                "content": "Khách hàng có thể đổi trả sản phẩm trong vòng 7 ngày kể từ ngày nhận hàng nếu sản phẩm có lỗi từ nhà sản xuất. Sản phẩm đổi trả phải còn nguyên vẹn, không có dấu hiệu đã qua sử dụng."
-            },
-            {
-                "id": "pol3",
-                "title": "Chính sách vận chuyển",
-                "content": "Interlux cung cấp dịch vụ vận chuyển miễn phí trong nội thành Hà Nội và TP.HCM cho đơn hàng từ 10 triệu đồng. Đối với các tỉnh thành khác, phí vận chuyển sẽ được tính dựa trên khoảng cách và khối lượng sản phẩm."
-            },
-            {
-                "id": "pol4",
-                "title": "Chính sách thanh toán",
-                "content": "Khách hàng có thể thanh toán bằng tiền mặt, chuyển khoản ngân hàng, hoặc thẻ tín dụng. Đối với đơn hàng trên 50 triệu đồng, khách hàng có thể thanh toán trả góp với lãi suất 0% trong 6 tháng đầu."
-            }
-        ]
+        sample_policies = []
         with open(POLICIES_FILE, "w", encoding="utf-8") as f:
             json.dump(sample_policies, f, ensure_ascii=False, indent=4)
 
@@ -222,28 +140,7 @@ def initialize_data_files():
 
     # Sample FAQs
     if not os.path.exists(FAQS_FILE):
-        sample_faqs = [
-            {
-                "id": "faq1",
-                "question": "Làm thế nào để đặt hàng?",
-                "answer": "Khách hàng có thể đặt hàng trực tiếp trên website, qua hotline 1900xxxx, hoặc đến trực tiếp showroom của Interlux."
-            },
-            {
-                "id": "faq2",
-                "question": "Thời gian giao hàng là bao lâu?",
-                "answer": "Thời gian giao hàng thông thường là 3-5 ngày đối với sản phẩm có sẵn, và 15-30 ngày đối với sản phẩm đặt hàng riêng."
-            },
-            {
-                "id": "faq3",
-                "question": "Có dịch vụ lắp đặt không?",
-                "answer": "Có, Interlux cung cấp dịch vụ lắp đặt miễn phí cho tất cả các sản phẩm nội thất."
-            },
-            {
-                "id": "faq4",
-                "question": "Làm thế nào để chăm sóc và bảo quản sản phẩm nội thất?",
-                "answer": "Mỗi sản phẩm sẽ có hướng dẫn chăm sóc và bảo quản riêng. Nhìn chung, nên tránh ánh nắng trực tiếp, độ ẩm cao, và vệ sinh thường xuyên bằng các sản phẩm chuyên dụng."
-            }
-        ]
+        sample_faqs = []
         with open(FAQS_FILE, "w", encoding="utf-8") as f:
             json.dump(sample_faqs, f, ensure_ascii=False, indent=4)
 
@@ -267,7 +164,7 @@ def add_product_to_vector_db(product):
         return False
 
     try:
-        product_text = f"{product['name']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
+        product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['attributes'])}"
         product_collection.add(
             documents=[product_text],
             metadatas=[product],
@@ -320,7 +217,7 @@ def update_product_in_vector_db(product):
         product_collection.delete(ids=[product["id"]])
 
         # Thêm sản phẩm mới
-        product_text = f"{product['name']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
+        product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
         product_collection.add(
             documents=[product_text],
             metadatas=[product],
@@ -453,7 +350,7 @@ def search_products(query: str, limit: int = 5):
     # Tìm kiếm sản phẩm có chứa từ khóa trong tên hoặc mô tả
     matched_products = []
     for product in products:
-        if (query in product["name"].lower() or
+        if (query in product["title"].lower() or
             query in product["description"].lower() or
             query in product["category"].lower()):
             matched_products.append(product)
@@ -485,7 +382,7 @@ def get_user_orders(user_id: str):
         for product in order["products"]:
             product_details = get_product_by_id(product["product_id"])
             if product_details:
-                product["name"] = product_details["name"]
+                product["title"] = product_details["title"]
 
     return user_orders
 
