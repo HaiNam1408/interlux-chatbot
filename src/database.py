@@ -1,5 +1,6 @@
 import os
 import json
+import requests
 from typing import List, Dict, Optional
 from dotenv import load_dotenv
 from datetime import datetime
@@ -85,27 +86,83 @@ FAQS_FILE = "./data/faqs.json"
 # Create data directory if it doesn't exist
 os.makedirs("./data", exist_ok=True)
 
+# Function to fetch products from API
+def fetch_products_from_api():
+    """Fetch products from the API"""
+    api_url = "https://interlux-be-dwbhhhf7gkemhzbm.eastasia-01.azurewebsites.net/api/v1/client/product"
+    params = {
+        "page": 1,
+        "limit": 100,
+        "sortBy": "createdAt",
+        "sortDirection": "desc"
+    }
+
+    try:
+        response = requests.get(api_url, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            if data["statusCode"] == 200 and "data" in data and "data" in data["data"]:
+                print(f"{data["message"]}")
+                return data["data"]["data"]
+        print(f"Failed to fetch products from API: {response.status_code}")
+        return []
+    except Exception as e:
+        print(f"Error fetching products from API: {e}")
+        return []
+
 # Initialize data files if they don't exist
 def initialize_data_files():
-    # Sample products
-    if not os.path.exists(PRODUCTS_FILE):
-        sample_products = []
+    # Products - fetch from API
+    api_products = fetch_products_from_api()
+
+    if api_products:
+        print(f"Fetched {len(api_products)} products from API")
+
+        # Save to file
         with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
-            json.dump(sample_products, f, ensure_ascii=False, indent=4)
+            json.dump(api_products, f, ensure_ascii=False, indent=4)
 
         # Add products to vector database if enabled
         if VECTOR_DB_ENABLED:
             try:
-                for product in sample_products:
-                    product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
+                # Clear existing products in vector database
+                try:
+                    product_collection.delete(where={})
+                    print("Cleared existing products from vector database")
+                except Exception as e:
+                    print(f"Error clearing products from vector database: {e}")
+
+                # Add new products
+                for product in api_products:
+                    # Extract category name
+                    category_name = product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown"
+
+                    # Extract image URLs
+                    image_urls = []
+                    if "images" in product and product["images"]:
+                        image_urls = [img["filePath"] for img in product["images"] if "filePath" in img]
+
+                    # Create product text for embedding
+                    product_text = f"{product['title']}: {product.get('description', '')} Price: {product['price']}. Category: {category_name}. Image: {image_urls[0] if image_urls else 'No image'}"
+
+                    # Add variations info if available
+                    if "variations" in product and product["variations"]:
+                        variations_text = ", ".join([f"{var.get('sku', '')}: {var.get('price', 0)}" for var in product["variations"]])
+                        product_text += f" Variations: {variations_text}"
+
                     product_collection.add(
                         documents=[product_text],
                         metadatas=[product],
-                        ids=[product["id"]]
+                        ids=[str(product["id"])]
                     )
-                print(f"Added {len(sample_products)} products to vector database")
+                print(f"Added {len(api_products)} products to vector database")
             except Exception as e:
                 print(f"Error adding products to vector database: {e}")
+    else:
+        # If API fetch fails, create empty products file
+        if not os.path.exists(PRODUCTS_FILE):
+            with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
+                json.dump([], f, ensure_ascii=False, indent=4)
 
     # Sample users
     if not os.path.exists(USERS_FILE):
@@ -159,16 +216,26 @@ def initialize_data_files():
 
 # Hàm tiện ích để quản lý dữ liệu trong vector database
 def add_product_to_vector_db(product):
-    """Thêm sản phẩm mới vào vector database"""
+    """Add a new product to the vector database"""
     if not VECTOR_DB_ENABLED:
         return False
 
     try:
-        product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['attributes'])}"
+        # Extract category name
+        category_name = product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown"
+
+        # Create product text for embedding
+        product_text = f"{product['title']}: {product.get('description', '')} Price: {product['price']}. Category: {category_name}."
+
+        # Add variations info if available
+        if "variations" in product and product["variations"]:
+            variations_text = ", ".join([f"{var.get('sku', '')}: {var.get('price', 0)}" for var in product["variations"]])
+            product_text += f" Variations: {variations_text}"
+
         product_collection.add(
             documents=[product_text],
             metadatas=[product],
-            ids=[product["id"]]
+            ids=[str(product["id"])]  # Convert ID to string for ChromaDB
         )
         return True
     except Exception as e:
@@ -208,22 +275,16 @@ def add_faq_to_vector_db(faq):
         return False
 
 def update_product_in_vector_db(product):
-    """Cập nhật sản phẩm trong vector database"""
+    """Update a product in the vector database"""
     if not VECTOR_DB_ENABLED:
         return False
 
     try:
-        # Xóa sản phẩm cũ
-        product_collection.delete(ids=[product["id"]])
+        # Delete old product
+        product_collection.delete(ids=[str(product["id"])])
 
-        # Thêm sản phẩm mới
-        product_text = f"{product['title']}: {product['description']} Giá: {product['price']} VND. Danh mục: {product['category']}. Tính năng: {', '.join(product['features'])}"
-        product_collection.add(
-            documents=[product_text],
-            metadatas=[product],
-            ids=[product["id"]]
-        )
-        return True
+        # Add new product (reuse the add_product_to_vector_db function)
+        return add_product_to_vector_db(product)
     except Exception as e:
         print(f"Error updating product in vector database: {e}")
         return False
@@ -255,7 +316,12 @@ def get_products():
     with open(PRODUCTS_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def get_product_by_id(product_id: str):
+def get_product_by_id(product_id):
+    """Get a product by ID (accepts both string and integer IDs)"""
+    # Convert product_id to int if it's a string containing a number
+    if isinstance(product_id, str) and product_id.isdigit():
+        product_id = int(product_id)
+
     products = get_products()
     for product in products:
         if product["id"] == product_id:
@@ -327,8 +393,8 @@ def delete_product(product_id: str):
 
 def search_products(query: str, limit: int = 5):
     """
-    Tìm kiếm sản phẩm dựa trên từ khóa trong query
-    Sử dụng vector database nếu có, nếu không sẽ sử dụng tìm kiếm từ khóa đơn giản
+    Search for products based on keywords in query
+    Uses vector database if available, otherwise falls back to simple keyword search
     """
     if VECTOR_DB_ENABLED:
         try:
@@ -347,15 +413,30 @@ def search_products(query: str, limit: int = 5):
     products = get_products()
     query = query.lower()
 
-    # Tìm kiếm sản phẩm có chứa từ khóa trong tên hoặc mô tả
+    # Search for products containing keywords in title, description or category
     matched_products = []
     for product in products:
+        # Check in title and description
         if (query in product["title"].lower() or
-            query in product["description"].lower() or
-            query in product["category"].lower()):
+            query in product.get("description", "").lower() or
+            query in product["slug"].lower()):
             matched_products.append(product)
+            continue
 
-    # Giới hạn số lượng kết quả
+        # Check in category
+        if "category" in product and "name" in product["category"]:
+            if query in product["category"]["name"].lower():
+                matched_products.append(product)
+                continue
+
+        # Check in variations
+        if "variations" in product:
+            for variation in product["variations"]:
+                if "sku" in variation and query in variation["sku"].lower():
+                    matched_products.append(product)
+                    break
+
+    # Limit the number of results
     return matched_products[:limit]
 
 def get_users():
@@ -383,6 +464,15 @@ def get_user_orders(user_id: str):
             product_details = get_product_by_id(product["product_id"])
             if product_details:
                 product["title"] = product_details["title"]
+                # Add more product details
+                if "images" in product_details and product_details["images"]:
+                    product["image"] = product_details["images"][0]["filePath"] if "filePath" in product_details["images"][0] else None
+                # Add variation details if available
+                if "variations" in product_details:
+                    default_variation = next((var for var in product_details["variations"] if var.get("isDefault", False)), None)
+                    if default_variation:
+                        product["variation"] = default_variation["sku"]
+                        product["finalPrice"] = default_variation["finalPrice"]
 
     return user_orders
 

@@ -84,22 +84,84 @@ function addMessageToChat(role, content) {
 }
 
 function formatMessageContent(content) {
-    // Format product information if present
-    if (typeof content === 'string' && content.includes('Products:')) {
-        const parts = content.split('Products:');
-        let formattedContent = parts[0];
-
-        const productParts = parts[1].split('- Title:');
-        for (let i = 1; i < productParts.length; i++) {
-            const productInfo = '- Title:' + productParts[i];
-            const productCard = createProductCard(productInfo);
-            formattedContent += productCard;
-        }
-
-        return formattedContent;
+    if (typeof content !== 'string') {
+        return content;
     }
 
-    return content;
+    // Kiểm tra và tách phần gallery hình ảnh đặc biệt
+    let mainContent = content;
+    let imageGalleryHTML = '';
+
+    // Tìm khối image-gallery
+    const imageGalleryMatch = content.match(/```image-gallery\n([\s\S]*?)```/);
+    if (imageGalleryMatch && imageGalleryMatch[1]) {
+        // Tách nội dung chính và phần gallery
+        mainContent = content.replace(/```image-gallery\n[\s\S]*?```/, '');
+
+        // Xử lý phần gallery
+        const galleryContent = imageGalleryMatch[1];
+        const imageLinks = galleryContent.match(/\[([^\]]+)\]\(([^)]+)\)/g);
+
+        if (imageLinks && imageLinks.length > 0) {
+            imageGalleryHTML = '<div class="image-gallery">';
+
+            imageLinks.forEach(link => {
+                const titleMatch = link.match(/\[([^\]]+)\]/);
+                const urlMatch = link.match(/\(([^)]+)\)/);
+
+                if (titleMatch && urlMatch) {
+                    const title = titleMatch[1];
+                    const url = urlMatch[1];
+
+                    imageGalleryHTML += `
+                        <div class="gallery-item">
+                            <img src="${url}" alt="${title}" class="gallery-image">
+                            <div class="gallery-caption">${title}</div>
+                        </div>
+                    `;
+                }
+            });
+
+            imageGalleryHTML += '</div>';
+        }
+    }
+
+    // Cấu hình Marked.js
+    marked.setOptions({
+        renderer: new marked.Renderer(),
+        highlight: function(code, lang) {
+            // Không xử lý highlight cho khối image-gallery
+            if (lang === 'image-gallery') return code;
+
+            const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+            return hljs.highlight(code, { language }).value;
+        },
+        langPrefix: 'hljs language-',
+        pedantic: false,
+        gfm: true,
+        breaks: true,
+        sanitize: false,
+        smartypants: false,
+        xhtml: false
+    });
+
+    // Chuyển đổi Markdown sang HTML
+    let formattedContent = marked.parse(mainContent);
+
+    // Xử lý hình ảnh để hiển thị đẹp hơn
+    formattedContent = formattedContent.replace(/<img src="([^"]+)"([^>]*)>/g,
+        '<a href="$1" target="_blank"><img src="$1" class="chat-image" $2></a>');
+
+    // Xử lý liên kết để mở trong tab mới
+    formattedContent = formattedContent.replace(/<a href="([^"]+)"([^>]*)>/g,
+        '<a href="$1" target="_blank" $2>');
+
+    // Thêm gallery hình ảnh vào cuối nội dung
+    if (imageGalleryHTML) {
+        formattedContent += imageGalleryHTML;
+    }
+
+    return formattedContent;
 }
 
 function createProductCard(productInfo) {
@@ -131,14 +193,15 @@ function createProductCard(productInfo) {
                 const [key, value] = pair.split(':').map(item => item.trim());
                 attributes[key] = value;
             });
-        } else if (line.includes('Images:')) {
-            const imagesText = line.replace('Images:', '').trim();
-            if (imagesText.includes('available')) {
-                // Just a count of images, not actual URLs
-                const count = parseInt(imagesText.split(' ')[0]);
-                for (let i = 0; i < count; i++) {
-                    images.push(`/images/placeholder_${i+1}.jpg`);
+        } else if (line.includes('Hình ảnh:') || line.includes('Images:')) {
+            // Tìm tất cả các URL hình ảnh trong các dòng tiếp theo
+            let i = lines.indexOf(line) + 1;
+            while (i < lines.length && (lines[i].includes('http') || lines[i].includes('*'))) {
+                const urlMatch = lines[i].match(/(https?:\/\/[^\s]+)/);
+                if (urlMatch) {
+                    images.push(urlMatch[0]);
                 }
+                i++;
             }
         }
     }
@@ -156,7 +219,19 @@ function createProductCard(productInfo) {
     // Create image HTML
     let imageHtml = '';
     if (images.length > 0) {
-        imageHtml = `<img src="${images[0]}" alt="${title}" class="product-image">`;
+        imageHtml = `<a href="${images[0]}" target="_blank"><img src="${images[0]}" alt="${title}" class="product-image"></a>`;
+
+        // Nếu có nhiều hình ảnh, hiển thị dưới dạng gallery thu nhỏ
+        if (images.length > 1) {
+            imageHtml += '<div class="product-gallery">';
+            for (let i = 1; i < Math.min(images.length, 4); i++) {
+                imageHtml += `<a href="${images[i]}" target="_blank"><img src="${images[i]}" alt="${title} - Image ${i+1}" class="gallery-thumbnail"></a>`;
+            }
+            if (images.length > 4) {
+                imageHtml += `<div class="more-images">+${images.length - 4}</div>`;
+            }
+            imageHtml += '</div>';
+        }
     }
 
     // Create discount badge
@@ -209,7 +284,33 @@ function loadUserOrders(userId) {
         });
 }
 
-// Initialize - load user orders if user ID exists
-if (userId) {
-    loadUserOrders(userId);
-}
+// Khởi tạo highlight.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Khởi tạo highlight.js
+    hljs.configure({
+        languages: ['javascript', 'python', 'html', 'css', 'json', 'bash', 'markdown']
+    });
+
+    // Xử lý sự kiện click cho hình ảnh
+    document.body.addEventListener('click', function(e) {
+        // Xử lý click cho hình ảnh trong tin nhắn thông thường
+        if (e.target.tagName === 'IMG' && e.target.parentNode.tagName === 'A') {
+            // Ngăn chặn hành vi mặc định của thẻ a
+            e.preventDefault();
+
+            // Mở hình ảnh trong tab mới
+            window.open(e.target.parentNode.href, '_blank');
+        }
+
+        // Xử lý click cho hình ảnh trong gallery
+        if (e.target.classList.contains('gallery-image')) {
+            // Mở hình ảnh trong tab mới
+            window.open(e.target.src, '_blank');
+        }
+    });
+
+    // Load user orders if user ID exists
+    if (userId) {
+        loadUserOrders(userId);
+    }
+});

@@ -1,1282 +1,1222 @@
 [
     {
-        "id": 1,
-        "title": "Sofa Elegance Royal",
-        "slug": "sofa-elegance-royal",
-        "description": "Sofa cao cấp với da thật nhập khẩu từ Ý, thiết kế hiện đại, phù hợp phòng khách sang trọng.",
-        "price": 32000000,
-        "percentOff": 10,
-        "sold": 25,
-        "attributes": {
-            "material": "Da thật",
-            "color": "Nâu đậm",
-            "size": "250x100x80cm",
-            "weight": "60kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_elegance_royal.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_elegance_royal_1.jpg",
-            "/images/sofa_elegance_royal_2.jpg"
-        ],
-        "sort": 1,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 2,
-        "title": "Bàn ăn Harmony Oak",
-        "slug": "ban-an-harmony-oak",
-        "description": "Bàn ăn gỗ sồi tự nhiên, thiết kế tối giản, lý tưởng cho gia đình 6-8 người.",
-        "price": 18000000,
-        "percentOff": null,
-        "sold": 10,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu tự nhiên",
-            "size": "200x90x75cm",
-            "weight": "45kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_harmony_oak_1.jpg",
-            "/images/ban_an_harmony_oak_2.jpg"
-        ],
-        "sort": 2,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 3,
-        "title": "Giường ngủ Luxury King",
-        "slug": "giuong-ngu-luxury-king",
-        "description": "Giường ngủ king size với đầu giường bọc da cao cấp, mang lại sự sang trọng và thoải mái.",
-        "price": 40000000,
-        "percentOff": 15,
-        "sold": 18,
-        "attributes": {
-            "material": "Gỗ tự nhiên, da",
-            "color": "Trắng kem",
-            "size": "220x200x120cm",
-            "weight": "80kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_luxury_king.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_luxury_king_1.jpg",
-            "/images/giuong_luxury_king_2.jpg",
-            "/images/giuong_luxury_king_3.jpg"
-        ],
-        "sort": 3,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 4,
-        "title": "Tủ quần áo Modern Slide",
-        "slug": "tu-quan-ao-modern-slide",
-        "description": "Tủ quần áo cửa lùa với thiết kế hiện đại, tối ưu không gian lưu trữ.",
-        "price": 28000000,
-        "percentOff": 5,
-        "sold": 12,
-        "attributes": {
-            "material": "Gỗ MDF, kính cường lực",
-            "color": "Trắng",
-            "size": "240x60x220cm",
-            "weight": "100kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_modern_slide_1.jpg",
-            "/images/tu_quan_ao_modern_slide_2.jpg"
-        ],
-        "sort": 4,
-        "status": "DRAFT",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 5,
-        "title": "Ghế thư giãn Nordic",
-        "slug": "ghe-thu-gian-nordic",
-        "description": "Ghế thư giãn phong cách Bắc Âu, bọc vải cao cấp, mang lại sự thoải mái tối đa.",
-        "price": 8000000,
-        "percentOff": null,
-        "sold": 30,
-        "attributes": {
-            "material": "Vải, gỗ sồi",
-            "color": "Xám nhạt",
-            "size": "80x90x100cm",
-            "weight": "15kg"
-        },
-        "category": "Ghế",
-        "model": {
-            "file": "/models/ghe_nordic.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/ghe_thu_gian_nordic_1.jpg"
-        ],
-        "sort": 5,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 6,
-        "title": "Đèn chùm Crystal Glow",
-        "slug": "den-chum-crystal-glow",
-        "description": "Đèn chùm pha lê cao cấp, tạo điểm nhấn sang trọng cho phòng khách hoặc phòng ăn.",
-        "price": 15000000,
-        "percentOff": 20,
+        "id": 9,
+        "title": "Executive Office Desk",
+        "slug": "executive-office-desk",
+        "price": 1200,
+        "percentOff": 0,
         "sold": 8,
-        "attributes": {
-            "material": "Pha lê, thép không gỉ",
-            "color": "Vàng ánh kim",
-            "size": "80x80x50cm",
-            "weight": "10kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
         "images": [
-            "/images/den_chum_crystal_glow_1.jpg",
-            "/images/den_chum_crystal_glow_2.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613713-smvu5fia.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            }
         ],
-        "sort": 6,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 7,
-        "title": "Sofa Classic Leather",
-        "slug": "sofa-classic-leather",
-        "description": "Sofa da thật cổ điển, mang phong cách hoàng gia, lý tưởng cho phòng khách lớn.",
-        "price": 45000000,
-        "percentOff": 12,
-        "sold": 15,
-        "attributes": {
-            "material": "Da thật, gỗ óc chó",
-            "color": "Đen",
-            "size": "280x110x85cm",
-            "weight": "70kg"
+        "category": {
+            "id": 22,
+            "name": "Desks",
+            "slug": "desks"
         },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_classic_leather.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_classic_leather_1.jpg",
-            "/images/sofa_classic_leather_2.jpg"
+        "variations": [
+            {
+                "id": 42,
+                "sku": "executive-office-desk-white",
+                "price": 1250,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-smvu5fia.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1250
+            },
+            {
+                "id": 43,
+                "sku": "executive-office-desk-brown",
+                "price": 1300,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-smvu5fia.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1300
+            },
+            {
+                "id": 41,
+                "sku": "executive-office-desk-default",
+                "price": 1200,
+                "percentOff": 0,
+                "inventory": 48,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-smvu5fia.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1200
+            },
+            {
+                "id": 44,
+                "sku": "executive-office-desk-gray",
+                "price": 1350,
+                "percentOff": 0,
+                "inventory": 33,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-smvu5fia.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1350
+            }
         ],
-        "sort": 7,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "createdAt": "2025-05-18T09:30:13.720Z",
+        "finalPrice": 1200
     },
     {
         "id": 8,
-        "title": "Bàn ăn Marble Lux",
-        "slug": "ban-an-marble-lux",
-        "description": "Bàn ăn mặt đá cẩm thạch, khung thép không gỉ, phù hợp cho không gian hiện đại.",
-        "price": 22000000,
-        "percentOff": null,
-        "sold": 5,
-        "attributes": {
-            "material": "Đá cẩm thạch, thép",
-            "color": "Trắng",
-            "size": "180x90x75cm",
-            "weight": "50kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_marble_lux_1.jpg"
-        ],
-        "sort": 8,
-        "status": "DRAFT",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 9,
-        "title": "Giường ngủ Minimalist",
-        "slug": "giuong-ngu-minimalist",
-        "description": "Giường ngủ phong cách tối giản, khung gỗ sồi, phù hợp với không gian nhỏ.",
-        "price": 25000000,
-        "percentOff": 8,
-        "sold": 20,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu nhạt",
-            "size": "180x200x100cm",
-            "weight": "60kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_minimalist.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_minimalist_1.jpg",
-            "/images/giuong_minimalist_2.jpg"
-        ],
-        "sort": 9,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 10,
-        "title": "Tủ quần áo Glass Elegance",
-        "slug": "tu-quan-ao-glass-elegance",
-        "description": "Tủ quần áo với cửa kính cường lực, thiết kế tinh tế, tối ưu không gian.",
-        "price": 32000000,
-        "percentOff": null,
-        "sold": 7,
-        "attributes": {
-            "material": "Gỗ MDF, kính cường lực",
-            "color": "Đen",
-            "size": "260x60x220cm",
-            "weight": "110kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_glass_elegance_1.jpg",
-            "/images/tu_quan_ao_glass_elegance_2.jpg"
-        ],
-        "sort": 10,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 11,
-        "title": "Ghế sofa đơn Velvet",
-        "slug": "ghe-sofa-don-velvet",
-        "description": "Ghế sofa đơn bọc nhung cao cấp, phong cách hiện đại, phù hợp cho góc đọc sách.",
-        "price": 6000000,
-        "percentOff": 10,
-        "sold": 35,
-        "attributes": {
-            "material": "Nhung, gỗ sồi",
-            "color": "Xanh navy",
-            "size": "70x80x85cm",
-            "weight": "12kg"
-        },
-        "category": "Ghế",
-        "model": {
-            "file": "/models/ghe_velvet.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/ghe_sofa_don_velvet_1.jpg"
-        ],
-        "sort": 11,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 12,
-        "title": "Đèn bàn Art Deco",
-        "slug": "den-ban-art-deco",
-        "description": "Đèn bàn phong cách Art Deco, thân đồng, chao vải, tạo không gian ấm cúng.",
-        "price": 5000000,
-        "percentOff": null,
-        "sold": 15,
-        "attributes": {
-            "material": "Đồng, vải",
-            "color": "Vàng",
-            "size": "30x30x50cm",
-            "weight": "3kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
-        "images": [
-            "/images/den_ban_art_deco_1.jpg"
-        ],
-        "sort": 12,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 13,
-        "title": "Sofa góc L Modern",
-        "slug": "sofa-goc-l-modern",
-        "description": "Sofa góc L với vải cao cấp, thiết kế tối ưu cho không gian phòng khách lớn.",
-        "price": 38000000,
-        "percentOff": 15,
-        "sold": 10,
-        "attributes": {
-            "material": "Vải, gỗ sồi",
-            "color": "Xám đậm",
-            "size": "300x200x90cm",
-            "weight": "85kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_goc_l_modern.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_goc_l_modern_1.jpg",
-            "/images/sofa_goc_l_modern_2.jpg"
-        ],
-        "sort": 13,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 14,
-        "title": "Bàn ăn Oval Classic",
-        "slug": "ban-an-oval-classic",
-        "description": "Bàn ăn hình oval với gỗ óc chó, phong cách cổ điển, phù hợp cho phòng ăn lớn.",
-        "price": 25000000,
-        "percentOff": 10,
-        "sold": 8,
-        "attributes": {
-            "material": "Gỗ óc chó",
-            "color": "Nâu đậm",
-            "size": "220x100x75cm",
-            "weight": "55kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_oval_classic_1.jpg"
-        ],
-        "sort": 14,
-        "status": "DRAFT",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 15,
-        "title": "Giường ngủ Queen Elegance",
-        "slug": "giuong-ngu-queen-elegance",
-        "description": "Giường ngủ queen size với đầu giường bọc nhung, thiết kế tinh tế.",
-        "price": 30000000,
-        "percentOff": null,
-        "sold": 12,
-        "attributes": {
-            "material": "Gỗ sồi, nhung",
-            "color": "Xanh lá",
-            "size": "180x200x110cm",
-            "weight": "70kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_queen_elegance.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_queen_elegance_1.jpg",
-            "/images/giuong_queen_elegance_2.jpg"
-        ],
-        "sort": 15,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 16,
-        "title": "Tủ quần áo Vintage Wood",
-        "slug": "tu-quan-ao-vintage-wood",
-        "description": "Tủ quần áo phong cách vintage, gỗ tự nhiên, nhiều ngăn lưu trữ.",
-        "price": 35000000,
+        "title": "Manhattan TV Unit",
+        "slug": "manhattan-tv-unit",
+        "price": 1850,
         "percentOff": 5,
-        "sold": 6,
-        "attributes": {
-            "material": "Gỗ thông",
-            "color": "Nâu cổ điển",
-            "size": "200x60x220cm",
-            "weight": "90kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
+        "sold": 24,
         "images": [
-            "/images/tu_quan_ao_vintage_wood_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613665-4ua3a63r.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            }
         ],
-        "sort": 16,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 9,
+            "name": "TV Units",
+            "slug": "tv-units"
+        },
+        "variations": [
+            {
+                "id": 38,
+                "sku": "manhattan-tv-unit-white",
+                "price": 1900,
+                "percentOff": 5,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1805
+            },
+            {
+                "id": 37,
+                "sku": "manhattan-tv-unit-default",
+                "price": 1850,
+                "percentOff": 5,
+                "inventory": 49,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1757.5
+            },
+            {
+                "id": 39,
+                "sku": "manhattan-tv-unit-brown",
+                "price": 1950,
+                "percentOff": 5,
+                "inventory": 29,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1852.5
+            },
+            {
+                "id": 40,
+                "sku": "manhattan-tv-unit-gray",
+                "price": 2000,
+                "percentOff": 5,
+                "inventory": 20,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1900
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.671Z",
+        "finalPrice": 1757.5
     },
     {
-        "id": 17,
-        "title": "Ghế ăn Minimalist Oak",
-        "slug": "ghe-an-minimalist-oak",
-        "description": "Ghế ăn gỗ sồi, thiết kế tối giản, phù hợp với mọi phong cách phòng ăn.",
-        "price": 2500000,
-        "percentOff": null,
-        "sold": 50,
-        "attributes": {
-            "material": "Gỗ sồi, vải",
-            "color": "Nâu nhạt",
-            "size": "50x50x85cm",
-            "weight": "5kg"
-        },
-        "category": "Ghế",
-        "model": null,
-        "images": [
-            "/images/ghe_an_minimalist_oak_1.jpg"
-        ],
-        "sort": 17,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 18,
-        "title": "Đèn sàn Modern Arc",
-        "slug": "den-san-modern-arc",
-        "description": "Đèn sàn cong hiện đại, thân thép, chao vải, lý tưởng cho phòng khách.",
-        "price": 7000000,
+        "id": 7,
+        "title": "Nordic Dining Table",
+        "slug": "nordic-dining-table",
+        "price": 1500,
         "percentOff": 10,
-        "sold": 20,
-        "attributes": {
-            "material": "Thép, vải",
-            "color": "Đen",
-            "size": "50x50x180cm",
-            "weight": "8kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
+        "sold": 2,
         "images": [
-            "/images/den_san_modern_arc_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613615-ohjel7dr.jpg",
+                "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613615-55uhx7n2.jpg",
+                "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+            }
         ],
-        "sort": 18,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 17,
+            "name": "Dining Tables",
+            "slug": "dining-tables"
+        },
+        "variations": [
+            {
+                "id": 33,
+                "sku": "nordic-dining-table-default",
+                "price": 1500,
+                "percentOff": 10,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-ohjel7dr.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-55uhx7n2.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1350
+            },
+            {
+                "id": 36,
+                "sku": "nordic-dining-table-gray",
+                "price": 1650,
+                "percentOff": 10,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-ohjel7dr.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-55uhx7n2.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1485
+            },
+            {
+                "id": 34,
+                "sku": "nordic-dining-table-white",
+                "price": 1550,
+                "percentOff": 10,
+                "inventory": 28,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-ohjel7dr.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-55uhx7n2.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1395
+            },
+            {
+                "id": 35,
+                "sku": "nordic-dining-table-brown",
+                "price": 1600,
+                "percentOff": 10,
+                "inventory": 14,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-ohjel7dr.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613615-55uhx7n2.jpg",
+                        "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1440
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.622Z",
+        "finalPrice": 1350
     },
     {
-        "id": 19,
-        "title": "Sofa Chesterfield",
-        "slug": "sofa-chesterfield",
-        "description": "Sofa Chesterfield cổ điển với da thật, phong cách quý tộc Anh.",
-        "price": 50000000,
-        "percentOff": 20,
-        "sold": 5,
-        "attributes": {
-            "material": "Da thật, gỗ óc chó",
-            "color": "Nâu đỏ",
-            "size": "270x100x80cm",
-            "weight": "75kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_chesterfield.glb",
-            "format": "GLB"
-        },
+        "id": 6,
+        "title": "Artisan Dining Table",
+        "slug": "artisan-dining-table",
+        "price": 2800,
+        "percentOff": 0,
+        "sold": 4,
         "images": [
-            "/images/sofa_chesterfield_1.jpg",
-            "/images/sofa_chesterfield_2.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613566-ue48fb4e.jpg",
+                "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+            }
         ],
-        "sort": 19,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 17,
+            "name": "Dining Tables",
+            "slug": "dining-tables"
+        },
+        "variations": [
+            {
+                "id": 28,
+                "sku": "artisan-dining-table-white",
+                "price": 2850,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2850
+            },
+            {
+                "id": 29,
+                "sku": "artisan-dining-table-brown",
+                "price": 2900,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2900
+            },
+            {
+                "id": 30,
+                "sku": "artisan-dining-table-gray",
+                "price": 2950,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2950
+            },
+            {
+                "id": 31,
+                "sku": "artisan-dining-table-leather",
+                "price": 3100,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3100
+            },
+            {
+                "id": 32,
+                "sku": "artisan-dining-table-metal",
+                "price": 3200,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3200
+            },
+            {
+                "id": 27,
+                "sku": "artisan-dining-table-default",
+                "price": 2800,
+                "percentOff": 0,
+                "inventory": 46,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 2800
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.572Z",
+        "finalPrice": 2800
     },
     {
-        "id": 20,
-        "title": "Bàn ăn Extendable",
-        "slug": "ban-an-extendable",
-        "description": "Bàn ăn có thể mở rộng, gỗ sồi, phù hợp cho các bữa tiệc lớn.",
-        "price": 20000000,
-        "percentOff": null,
-        "sold": 9,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu nhạt",
-            "size": "180-240x90x75cm",
-            "weight": "50kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_extendable_1.jpg"
-        ],
-        "sort": 20,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 21,
-        "title": "Giường ngủ Canopy",
-        "slug": "giuong-ngu-canopy",
-        "description": "Giường ngủ với khung canopy, bọc vải, mang phong cách hoàng gia.",
-        "price": 45000000,
-        "percentOff": 10,
-        "sold": 7,
-        "attributes": {
-            "material": "Gỗ óc chó, vải",
-            "color": "Trắng",
-            "size": "200x200x220cm",
-            "weight": "90kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_canopy.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_canopy_1.jpg",
-            "/images/giuong_canopy_2.jpg"
-        ],
-        "sort": 21,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 22,
-        "title": "Tủ quần áo Mirror Slide",
-        "slug": "tu-quan-ao-mirror-slide",
-        "description": "Tủ quần áo cửa lùa với gương toàn thân, tối ưu không gian.",
-        "price": 30000000,
-        "percentOff": null,
-        "sold": 10,
-        "attributes": {
-            "material": "Gỗ MDF, gương",
-            "color": "Trắng",
-            "size": "240x60x220cm",
-            "weight": "120kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_mirror_slide_1.jpg"
-        ],
-        "sort": 22,
-        "status": "DRAFT",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 23,
-        "title": "Ghế bành Leather Lux",
-        "slug": "ghe-banh-leather-lux",
-        "description": "Ghế bành da thật, thiết kế sang trọng, lý tưởng cho phòng làm việc.",
-        "price": 9000000,
+        "id": 5,
+        "title": "Sofia Bed",
+        "slug": "sofia-bed",
+        "price": 1800,
         "percentOff": 15,
-        "sold": 25,
-        "attributes": {
-            "material": "Da thật, thép",
-            "color": "Đen",
-            "size": "80x80x90cm",
-            "weight": "20kg"
-        },
-        "category": "Ghế",
-        "model": {
-            "file": "/models/ghe_leather_lux.glb",
-            "format": "GLB"
-        },
+        "sold": 0,
         "images": [
-            "/images/ghe_banh_leather_lux_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613516-zmyw1gso.jpg",
+                "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613516-59eg9qsz.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            }
         ],
-        "sort": 23,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 12,
+            "name": "Beds",
+            "slug": "beds"
+        },
+        "variations": [
+            {
+                "id": 23,
+                "sku": "sofia-bed-default",
+                "price": 1800,
+                "percentOff": 15,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-zmyw1gso.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-59eg9qsz.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1530
+            },
+            {
+                "id": 24,
+                "sku": "sofia-bed-white",
+                "price": 1850,
+                "percentOff": 15,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-zmyw1gso.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-59eg9qsz.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1572.5
+            },
+            {
+                "id": 25,
+                "sku": "sofia-bed-brown",
+                "price": 1900,
+                "percentOff": 15,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-zmyw1gso.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-59eg9qsz.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1615
+            },
+            {
+                "id": 26,
+                "sku": "sofia-bed-gray",
+                "price": 1950,
+                "percentOff": 15,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-zmyw1gso.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613516-59eg9qsz.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1657.5
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.522Z",
+        "finalPrice": 1530
     },
     {
-        "id": 24,
-        "title": "Đèn trần Minimalist",
-        "slug": "den-tran-minimalist",
-        "description": "Đèn trần phong cách tối giản, ánh sáng ấm, phù hợp cho phòng ngủ.",
-        "price": 4000000,
-        "percentOff": null,
-        "sold": 18,
-        "attributes": {
-            "material": "Kim loại, kính",
-            "color": "Trắng",
-            "size": "40x40x20cm",
-            "weight": "2kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
+        "id": 4,
+        "title": "Harmony Bed",
+        "slug": "harmony-bed",
+        "price": 3500,
+        "percentOff": 0,
+        "sold": 0,
         "images": [
-            "/images/den_tran_minimalist_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613469-9ibras7c.jpg",
+                "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613469-sz560dsm.jpg",
+                "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+            }
         ],
-        "sort": 24,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 12,
+            "name": "Beds",
+            "slug": "beds"
+        },
+        "variations": [
+            {
+                "id": 17,
+                "sku": "harmony-bed-default",
+                "price": 3500,
+                "percentOff": 0,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 3500
+            },
+            {
+                "id": 18,
+                "sku": "harmony-bed-white",
+                "price": 3550,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3550
+            },
+            {
+                "id": 19,
+                "sku": "harmony-bed-brown",
+                "price": 3600,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3600
+            },
+            {
+                "id": 20,
+                "sku": "harmony-bed-gray",
+                "price": 3650,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3650
+            },
+            {
+                "id": 21,
+                "sku": "harmony-bed-leather",
+                "price": 3800,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3800
+            },
+            {
+                "id": 22,
+                "sku": "harmony-bed-metal",
+                "price": 3900,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-9ibras7c.jpg",
+                        "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613469-sz560dsm.jpg",
+                        "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 3900
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.475Z",
+        "finalPrice": 3500
     },
     {
-        "id": 25,
-        "title": "Sofa Modular Cloud",
-        "slug": "sofa-modular-cloud",
-        "description": "Sofa module linh hoạt, bọc vải cao cấp, dễ dàng tùy chỉnh bố cục.",
-        "price": 42000000,
-        "percentOff": 10,
-        "sold": 12,
-        "attributes": {
-            "material": "Vải, gỗ sồi",
-            "color": "Xám nhạt",
-            "size": "320x200x90cm",
-            "weight": "90kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_modular_cloud.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_modular_cloud_1.jpg",
-            "/images/sofa_modular_cloud_2.jpg"
-        ],
-        "sort": 25,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 26,
-        "title": "Bàn ăn Glass Top",
-        "slug": "ban-an-glass-top",
-        "description": "Bàn ăn mặt kính cường lực, khung gỗ, phong cách hiện đại.",
-        "price": 16000000,
-        "percentOff": null,
-        "sold": 15,
-        "attributes": {
-            "material": "Kính cường lực, gỗ",
-            "color": "Đen",
-            "size": "180x90x75cm",
-            "weight": "40kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_glass_top_1.jpg"
-        ],
-        "sort": 26,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 27,
-        "title": "Giường ngủ Low Profile",
-        "slug": "giuong-ngu-low-profile",
-        "description": "Giường ngủ thấp, thiết kế hiện đại, phù hợp với không gian nhỏ.",
-        "price": 22000000,
+        "id": 3,
+        "title": "Venice Leather Sofa",
+        "slug": "venice-leather-sofa",
+        "price": 4500,
         "percentOff": 5,
-        "sold": 18,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu nhạt",
-            "size": "180x200x80cm",
-            "weight": "50kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_low_profile.glb",
-            "format": "GLB"
-        },
+        "sold": 0,
         "images": [
-            "/images/giuong_low_profile_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613420-c9bsam4n.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613420-lqx00hdq.jpg",
+                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+            }
         ],
-        "sort": 27,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "category": {
+            "id": 7,
+            "name": "Sofas",
+            "slug": "sofas"
+        },
+        "variations": [
+            {
+                "id": 11,
+                "sku": "venice-leather-sofa-default",
+                "price": 4500,
+                "percentOff": 5,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 4275
+            },
+            {
+                "id": 12,
+                "sku": "venice-leather-sofa-white",
+                "price": 4550,
+                "percentOff": 5,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 4322.5
+            },
+            {
+                "id": 13,
+                "sku": "venice-leather-sofa-brown",
+                "price": 4600,
+                "percentOff": 5,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 4370
+            },
+            {
+                "id": 14,
+                "sku": "venice-leather-sofa-gray",
+                "price": 4650,
+                "percentOff": 5,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 4417.5
+            },
+            {
+                "id": 15,
+                "sku": "venice-leather-sofa-leather",
+                "price": 4800,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 4800
+            },
+            {
+                "id": 16,
+                "sku": "venice-leather-sofa-metal",
+                "price": 4900,
+                "percentOff": 0,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-c9bsam4n.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613420-lqx00hdq.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 4900
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.427Z",
+        "finalPrice": 4275
     },
     {
-        "id": 28,
-        "title": "Tủ quần áo Walk-in",
-        "slug": "tu-quan-ao-walk-in",
-        "description": "Tủ quần áo walk-in cao cấp, nhiều ngăn, thiết kế sang trọng.",
-        "price": 60000000,
+        "id": 2,
+        "title": "Minimalist Sofa",
+        "slug": "minimalist-sofa",
+        "price": 1200,
+        "percentOff": 0,
+        "sold": 0,
+        "images": [
+            {
+                "type": "image",
+                "fileName": "product/1747560613368-dlef14db.jpg",
+                "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613368-t8mcp5sj.jpg",
+                "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+            }
+        ],
+        "category": {
+            "id": 7,
+            "name": "Sofas",
+            "slug": "sofas"
+        },
+        "variations": [
+            {
+                "id": 7,
+                "sku": "minimalist-sofa-default",
+                "price": 1200,
+                "percentOff": 0,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-dlef14db.jpg",
+                        "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-t8mcp5sj.jpg",
+                        "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1200
+            },
+            {
+                "id": 8,
+                "sku": "minimalist-sofa-white",
+                "price": 1250,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-dlef14db.jpg",
+                        "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-t8mcp5sj.jpg",
+                        "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1250
+            },
+            {
+                "id": 9,
+                "sku": "minimalist-sofa-brown",
+                "price": 1300,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-dlef14db.jpg",
+                        "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-t8mcp5sj.jpg",
+                        "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1300
+            },
+            {
+                "id": 10,
+                "sku": "minimalist-sofa-gray",
+                "price": 1350,
+                "percentOff": 0,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-dlef14db.jpg",
+                        "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613368-t8mcp5sj.jpg",
+                        "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 1350
+            }
+        ],
+        "createdAt": "2025-05-18T09:30:13.374Z",
+        "finalPrice": 1200
+    },
+    {
+        "id": 1,
+        "title": "Milano Corner Sofa",
+        "slug": "milano-corner-sofa",
+        "price": 2500,
         "percentOff": 10,
         "sold": 3,
-        "attributes": {
-            "material": "Gỗ óc chó, kính",
-            "color": "Nâu đậm",
-            "size": "300x60x240cm",
-            "weight": "150kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
         "images": [
-            "/images/tu_quan_ao_walk_in_1.jpg"
+            {
+                "type": "image",
+                "fileName": "product/1747560613273-79ja7t2p.jpg",
+                "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+            }
         ],
-        "sort": 28,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 29,
-        "title": "Ghế văn phòng Ergonomic",
-        "slug": "ghe-van-phong-ergonomic",
-        "description": "Ghế văn phòng công thái học, bọc lưới, hỗ trợ lưng tối ưu.",
-        "price": 5000000,
-        "percentOff": null,
-        "sold": 40,
-        "attributes": {
-            "material": "Lưới, nhựa cao cấp",
-            "color": "Đen",
-            "size": "60x60x120cm",
-            "weight": "15kg"
+        "category": {
+            "id": 7,
+            "name": "Sofas",
+            "slug": "sofas"
         },
-        "category": "Ghế",
-        "model": null,
-        "images": [
-            "/images/ghe_van_phong_ergonomic_1.jpg"
+        "variations": [
+            {
+                "id": 1,
+                "sku": "milano-corner-sofa-default",
+                "price": 2500,
+                "percentOff": 10,
+                "inventory": 50,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 2250
+            },
+            {
+                "id": 3,
+                "sku": "milano-corner-sofa-brown",
+                "price": 2600,
+                "percentOff": 10,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2340
+            },
+            {
+                "id": 4,
+                "sku": "milano-corner-sofa-gray",
+                "price": 2650,
+                "percentOff": 10,
+                "inventory": 30,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2385
+            },
+            {
+                "id": 5,
+                "sku": "milano-corner-sofa-leather",
+                "price": 2800,
+                "percentOff": 5,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2660
+            },
+            {
+                "id": 6,
+                "sku": "milano-corner-sofa-metal",
+                "price": 2900,
+                "percentOff": 5,
+                "inventory": 15,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2755
+            },
+            {
+                "id": 2,
+                "sku": "milano-corner-sofa-white",
+                "price": 2550,
+                "percentOff": 10,
+                "inventory": 27,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-79ja7t2p.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/milano-sofa.jpg?fit=371%2C371&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-r7uf9kg4.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Amb_v01.jpg?fit=2154%2C1452&ssl=1"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613273-x9zo5ssu.jpg",
+                        "filePath": "https://i0.wp.com/suffadesign.com/wp-content/uploads/2021/10/Milano-SalaEstar-Porm_v01.jpg?w=1405&ssl=1"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2295
+            }
         ],
-        "sort": 29,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 30,
-        "title": "Đèn chùm Modern Crystal",
-        "slug": "den-chum-modern-crystal",
-        "description": "Đèn chùm pha lê hiện đại, ánh sáng lung linh, phù hợp phòng khách lớn.",
-        "price": 20000000,
-        "percentOff": 15,
-        "sold": 6,
-        "attributes": {
-            "material": "Pha lê, thép",
-            "color": "Bạc",
-            "size": "100x100x60cm",
-            "weight": "12kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
-        "images": [
-            "/images/den_chum_modern_crystal_1.jpg"
-        ],
-        "sort": 30,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 31,
-        "title": "Sofa Recliner Comfort",
-        "slug": "sofa-recliner-comfort",
-        "description": "Sofa ngả lưng tự động, bọc da, mang lại trải nghiệm thư giãn tối đa.",
-        "price": 35000000,
-        "percentOff": 10,
-        "sold": 10,
-        "attributes": {
-            "material": "Da thật, thép",
-            "color": "Nâu",
-            "size": "250x100x100cm",
-            "weight": "80kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_recliner_comfort.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_recliner_comfort_1.jpg"
-        ],
-        "sort": 31,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 32,
-        "title": "Bàn ăn Rustic Wood",
-        "slug": "ban-an-rustic-wood",
-        "description": "Bàn ăn gỗ thông phong cách rustic, phù hợp cho không gian ấm cúng.",
-        "price": 14000000,
-        "percentOff": null,
-        "sold": 12,
-        "attributes": {
-            "material": "Gỗ thông",
-            "color": "Nâu tự nhiên",
-            "size": "180x90x75cm",
-            "weight": "40kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_rustic_wood_1.jpg"
-        ],
-        "sort": 32,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 33,
-        "title": "Giường ngủ Platform",
-        "slug": "giuong-ngu-platform",
-        "description": "Giường ngủ platform hiện đại, khung gỗ, thiết kế tối giản.",
-        "price": 28000000,
-        "percentOff": 5,
-        "sold": 15,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu",
-            "size": "180x200x90cm",
-            "weight": "60kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_platform.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_platform_1.jpg"
-        ],
-        "sort": 33,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 34,
-        "title": "Tủ quần áo Compact",
-        "slug": "tu-quan-ao-compact",
-        "description": "Tủ quần áo nhỏ gọn, phù hợp cho căn hộ nhỏ, nhiều ngăn tiện lợi.",
-        "price": 20000000,
-        "percentOff": null,
-        "sold": 20,
-        "attributes": {
-            "material": "Gỗ MDF",
-            "color": "Trắng",
-            "size": "180x50x200cm",
-            "weight": "80kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_compact_1.jpg"
-        ],
-        "sort": 34,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 35,
-        "title": "Ghế sofa góc Velvet",
-        "slug": "ghe-sofa-goc-velvet",
-        "description": "Ghế sofa góc bọc nhung, phong cách hiện đại, lý tưởng cho phòng khách nhỏ.",
-        "price": 7000000,
-        "percentOff": 10,
-        "sold": 30,
-        "attributes": {
-            "material": "Nhung, gỗ",
-            "color": "Xanh dương",
-            "size": "80x80x85cm",
-            "weight": "15kg"
-        },
-        "category": "Ghế",
-        "model": {
-            "file": "/models/ghe_sofa_goc_velvet.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/ghe_sofa_goc_velvet_1.jpg"
-        ],
-        "sort": 35,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 36,
-        "title": "Đèn bàn Crystal Shine",
-        "slug": "den-ban-crystal-shine",
-        "description": "Đèn bàn pha lê nhỏ gọn, ánh sáng lung linh, phù hợp cho bàn làm việc.",
-        "price": 3000000,
-        "percentOff": null,
-        "sold": 25,
-        "attributes": {
-            "material": "Pha lê, kim loại",
-            "color": "Bạc",
-            "size": "20x20x40cm",
-            "weight": "2kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
-        "images": [
-            "/images/den_ban_crystal_shine_1.jpg"
-        ],
-        "sort": 36,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 37,
-        "title": "Sofa Loveseat Modern",
-        "slug": "sofa-loveseat-modern",
-        "description": "Sofa loveseat bọc vải, thiết kế hiện đại, phù hợp cho cặp đôi.",
-        "price": 25000000,
-        "percentOff": 10,
-        "sold": 15,
-        "attributes": {
-            "material": "Vải, gỗ sồi",
-            "color": "Xám",
-            "size": "180x100x85cm",
-            "weight": "50kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_loveseat_modern.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_loveseat_modern_1.jpg"
-        ],
-        "sort": 37,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 38,
-        "title": "Bàn ăn Scandinavian",
-        "slug": "ban-an-scandinavian",
-        "description": "Bàn ăn phong cách Bắc Âu, gỗ sồi, thiết kế tối giản.",
-        "price": 17000000,
-        "percentOff": null,
-        "sold": 10,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu nhạt",
-            "size": "180x90x75cm",
-            "weight": "45kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_scandinavian_1.jpg"
-        ],
-        "sort": 38,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 39,
-        "title": "Giường ngủ Upholstered",
-        "slug": "giuong-ngu-upholstered",
-        "description": "Giường ngủ bọc vải cao cấp, thiết kế sang trọng, phù hợp với phòng lớn.",
-        "price": 38000000,
-        "percentOff": 15,
-        "sold": 8,
-        "attributes": {
-            "material": "Vải, gỗ sồi",
-            "color": "Xám đậm",
-            "size": "200x200x120cm",
-            "weight": "80kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_upholstered.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_upholstered_1.jpg"
-        ],
-        "sort": 39,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 40,
-        "title": "Tủ quần áo Classic Oak",
-        "slug": "tu-quan-ao-classic-oak",
-        "description": "Tủ quần áo gỗ sồi cổ điển, nhiều ngăn, phong cách truyền thống.",
-        "price": 40000000,
-        "percentOff": 10,
-        "sold": 5,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu",
-            "size": "220x60x220cm",
-            "weight": "100kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_classic_oak_1.jpg"
-        ],
-        "sort": 40,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 41,
-        "title": "Ghế thư giãn Leather",
-        "slug": "ghe-thu-gian-leather",
-        "description": "Ghế thư giãn da thật, thiết kế hiện đại, lý tưởng cho phòng đọc sách.",
-        "price": 10000000,
-        "percentOff": 10,
-        "sold": 20,
-        "attributes": {
-            "material": "Da thật, thép",
-            "color": "Nâu",
-            "size": "80x90x100cm",
-            "weight": "18kg"
-        },
-        "category": "Ghế",
-        "model": {
-            "file": "/models/ghe_thu_gian_leather.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/ghe_thu_gian_leather_1.jpg"
-        ],
-        "sort": 41,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 42,
-        "title": "Đèn sàn Industrial",
-        "slug": "den-san-industrial",
-        "description": "Đèn sàn phong cách công nghiệp, thân kim loại, phù hợp cho phòng khách.",
-        "price": 6000000,
-        "percentOff": null,
-        "sold": 15,
-        "attributes": {
-            "material": "Kim loại",
-            "color": "Đen",
-            "size": "40x40x150cm",
-            "weight": "5kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
-        "images": [
-            "/images/den_san_industrial_1.jpg"
-        ],
-        "sort": 42,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 43,
-        "title": "Sofa Sectional Lux",
-        "slug": "sofa-sectional-lux",
-        "description": "Sofa sectional bọc da, thiết kế sang trọng, phù hợp cho phòng khách lớn.",
-        "price": 48000000,
-        "percentOff": 15,
-        "sold": 7,
-        "attributes": {
-            "material": "Da thật, gỗ óc chó",
-            "color": "Đen",
-            "size": "320x220x90cm",
-            "weight": "100kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_sectional_lux.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_sectional_lux_1.jpg"
-        ],
-        "sort": 43,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 44,
-        "title": "Bàn ăn Round Marble",
-        "slug": "ban-an-round-marble",
-        "description": "Bàn ăn tròn mặt đá cẩm thạch, phong cách hiện đại, phù hợp cho gia đình nhỏ.",
-        "price": 19000000,
-        "percentOff": null,
-        "sold": 10,
-        "attributes": {
-            "material": "Đá cẩm thạch, thép",
-            "color": "Trắng",
-            "size": "120x120x75cm",
-            "weight": "45kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_round_marble_1.jpg"
-        ],
-        "sort": 44,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 45,
-        "title": "Giường ngủ Storage",
-        "slug": "giuong-ngu-storage",
-        "description": "Giường ngủ với ngăn lưu trữ bên dưới, tối ưu không gian, thiết kế hiện đại.",
-        "price": 32000000,
-        "percentOff": 10,
-        "sold": 12,
-        "attributes": {
-            "material": "Gỗ sồi",
-            "color": "Nâu",
-            "size": "180x200x100cm",
-            "weight": "70kg"
-        },
-        "category": "Giường ngủ",
-        "model": {
-            "file": "/models/giuong_storage.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/giuong_storage_1.jpg"
-        ],
-        "sort": 45,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 46,
-        "title": "Tủ quần áo Sliding Glass",
-        "slug": "tu-quan-ao-sliding-glass",
-        "description": "Tủ quần áo cửa lùa kính, thiết kế hiện đại, phù hợp cho phòng ngủ lớn.",
-        "price": 35000000,
-        "percentOff": 5,
-        "sold": 8,
-        "attributes": {
-            "material": "Gỗ MDF, kính",
-            "color": "Trắng",
-            "size": "260x60x220cm",
-            "weight": "110kg"
-        },
-        "category": "Tủ quần áo",
-        "model": null,
-        "images": [
-            "/images/tu_quan_ao_sliding_glass_1.jpg"
-        ],
-        "sort": 46,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 47,
-        "title": "Ghế ăn Velvet Lux",
-        "slug": "ghe-an-velvet-lux",
-        "description": "Ghế ăn bọc nhung, phong cách sang trọng, phù hợp với bàn ăn cao cấp.",
-        "price": 3000000,
-        "percentOff": null,
-        "sold": 45,
-        "attributes": {
-            "material": "Nhung, gỗ sồi",
-            "color": "Xanh navy",
-            "size": "50x50x85cm",
-            "weight": "6kg"
-        },
-        "category": "Ghế",
-        "model": null,
-        "images": [
-            "/images/ghe_an_velvet_lux_1.jpg"
-        ],
-        "sort": 47,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 48,
-        "title": "Đèn chùm Vintage",
-        "slug": "den-chum-vintage",
-        "description": "Đèn chùm phong cách vintage, thân đồng, chao kính, tạo không gian ấm áp.",
-        "price": 12000000,
-        "percentOff": 10,
-        "sold": 10,
-        "attributes": {
-            "material": "Đồng, kính",
-            "color": "Vàng",
-            "size": "80x80x50cm",
-            "weight": "8kg"
-        },
-        "category": "Đèn trang trí",
-        "model": null,
-        "images": [
-            "/images/den_chum_vintage_1.jpg"
-        ],
-        "sort": 48,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 49,
-        "title": "Sofa Corner Velvet",
-        "slug": "sofa-corner-velvet",
-        "description": "Sofa góc bọc nhung, thiết kế hiện đại, tối ưu không gian phòng khách.",
-        "price": 40000000,
-        "percentOff": 15,
-        "sold": 8,
-        "attributes": {
-            "material": "Nhung, gỗ sồi",
-            "color": "Xám",
-            "size": "300x200x90cm",
-            "weight": "90kg"
-        },
-        "category": "Sofa",
-        "model": {
-            "file": "/models/sofa_corner_velvet.glb",
-            "format": "GLB"
-        },
-        "images": [
-            "/images/sofa_corner_velvet_1.jpg"
-        ],
-        "sort": 49,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
-    },
-    {
-        "id": 50,
-        "title": "Bàn ăn Luxury Marble",
-        "slug": "ban-an-luxury-marble",
-        "description": "Bàn ăn mặt đá cẩm thạch cao cấp, khung thép, phong cách sang trọng.",
-        "price": 25000000,
-        "percentOff": 10,
-        "sold": 6,
-        "attributes": {
-            "material": "Đá cẩm thạch, thép",
-            "color": "Trắng",
-            "size": "200x100x75cm",
-            "weight": "60kg"
-        },
-        "category": "Bàn ăn",
-        "model": null,
-        "images": [
-            "/images/ban_an_luxury_marble_1.jpg"
-        ],
-        "sort": 50,
-        "status": "PUBLISHED",
-        "createdAt": "2025-05-14T11:22:00.000Z",
-        "updatedAt": "2025-05-14T11:22:00.000Z"
+        "createdAt": "2025-05-18T09:30:13.280Z",
+        "finalPrice": 2250
     }
 ]
