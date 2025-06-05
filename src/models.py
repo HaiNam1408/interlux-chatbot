@@ -11,6 +11,7 @@ class UserSession(BaseModel):
     user_id: str
     messages: List[ChatMessage] = []
     context: Dict = {}
+    last_activity: datetime = datetime.now()
 
     def add_message(self, role: Literal["user", "bot"], content: str):
         self.messages.append(ChatMessage(role=role, content=content))

@@ -5,7 +5,7 @@
         "slug": "executive-office-desk",
         "price": 1200,
         "percentOff": 0,
-        "sold": 8,
+        "sold": 11,
         "images": [
             {
                 "type": "image",
@@ -24,6 +24,27 @@
             "slug": "desks"
         },
         "variations": [
+            {
+                "id": 41,
+                "sku": "executive-office-desk-default",
+                "price": 1200,
+                "percentOff": 0,
+                "inventory": 48,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-smvu5fia.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1200
+            },
             {
                 "id": 42,
                 "sku": "executive-office-desk-white",
@@ -67,32 +88,11 @@
                 "finalPrice": 1300
             },
             {
-                "id": 41,
-                "sku": "executive-office-desk-default",
-                "price": 1200,
-                "percentOff": 0,
-                "inventory": 48,
-                "images": [
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613713-smvu5fia.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    },
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613713-qyv8qrqt.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    }
-                ],
-                "isDefault": true,
-                "finalPrice": 1200
-            },
-            {
                 "id": 44,
                 "sku": "executive-office-desk-gray",
                 "price": 1350,
                 "percentOff": 0,
-                "inventory": 33,
+                "inventory": 30,
                 "images": [
                     {
                         "type": "image",
@@ -227,23 +227,12 @@
     },
     {
         "id": 7,
-        "title": "Nordic Dining Table",
-        "slug": "nordic-dining-table",
+        "title": "Nordic Dining Table Gray",
+        "slug": "nordic-dining-table-gray",
         "price": 1500,
         "percentOff": 10,
         "sold": 2,
-        "images": [
-            {
-                "type": "image",
-                "fileName": "product/1747560613615-ohjel7dr.jpg",
-                "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
-            },
-            {
-                "type": "image",
-                "fileName": "product/1747560613615-55uhx7n2.jpg",
-                "filePath": "https://d1u8v8zs97kc2a.cloudfront.net/product/AC011450-1/Nfp6NKdUBvgheEVqB2cvCEO7fWhmOMMxk1M6gwOy.webp"
-            }
-        ],
+        "images": [],
         "category": {
             "id": 17,
             "name": "Dining Tables",
@@ -344,7 +333,7 @@
         "slug": "artisan-dining-table",
         "price": 2800,
         "percentOff": 0,
-        "sold": 4,
+        "sold": 8,
         "images": [
             {
                 "type": "image",
@@ -363,27 +352,6 @@
             "slug": "dining-tables"
         },
         "variations": [
-            {
-                "id": 28,
-                "sku": "artisan-dining-table-white",
-                "price": 2850,
-                "percentOff": 0,
-                "inventory": 30,
-                "images": [
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
-                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
-                    },
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613566-ue48fb4e.jpg",
-                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
-                    }
-                ],
-                "isDefault": false,
-                "finalPrice": 2850
-            },
             {
                 "id": 29,
                 "sku": "artisan-dining-table-brown",
@@ -446,6 +414,27 @@
                 ],
                 "isDefault": false,
                 "finalPrice": 3100
+            },
+            {
+                "id": 28,
+                "sku": "artisan-dining-table-white",
+                "price": 2850,
+                "percentOff": 0,
+                "inventory": 26,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-dqmrk9zl.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613566-ue48fb4e.jpg",
+                        "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                    }
+                ],
+                "isDefault": false,
+                "finalPrice": 2850
             },
             {
                 "id": 32,
@@ -1035,7 +1024,7 @@
         "slug": "milano-corner-sofa",
         "price": 2500,
         "percentOff": 10,
-        "sold": 3,
+        "sold": 6,
         "images": [
             {
                 "type": "image",
@@ -1194,7 +1183,7 @@
                 "sku": "milano-corner-sofa-white",
                 "price": 2550,
                 "percentOff": 10,
-                "inventory": 27,
+                "inventory": 24,
                 "images": [
                     {
                         "type": "image",

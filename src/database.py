@@ -7,32 +7,24 @@ from datetime import datetime
 
 load_dotenv()
 
-# Create data directory if it doesn't exist
-os.makedirs("./data", exist_ok=True)
-
 # Try to import ChromaDB
 try:
     import chromadb
     from chromadb.utils import embedding_functions
 
-    # Kiểm tra xem có đang chạy trong Docker không
     CHROMA_HOST = os.getenv("CHROMA_HOST", "localhost")
     CHROMA_PORT = os.getenv("CHROMA_PORT", "8001")
 
-    # Nếu chạy trong Docker, sử dụng HTTP client để kết nối với ChromaDB container
-    # Nếu không, sử dụng PersistentClient với đường dẫn local
     if CHROMA_HOST != "localhost":
         print(f"Connecting to ChromaDB at {CHROMA_HOST}:{CHROMA_PORT}...")
         client = chromadb.HttpClient(host=CHROMA_HOST, port=CHROMA_PORT)
         print("Connected to ChromaDB via HTTP!")
     else:
-        # Initialize ChromaDB with local path
         CHROMA_DB_PATH = os.getenv("CHROMA_DB_PATH", "./data/chroma_db")
         os.makedirs(CHROMA_DB_PATH, exist_ok=True)
         client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
         print(f"Connected to ChromaDB at local path: {CHROMA_DB_PATH}")
 
-    # Set up embedding function
     embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
         model_name="all-MiniLM-L6-v2"
     )
@@ -77,14 +69,42 @@ except Exception as e:
     VECTOR_DB_ENABLED = False
 
 # Sample data storage (in a real application, this would be a database)
-PRODUCTS_FILE = "./data/products.json"
-USERS_FILE = "./data/users.json"
-ORDERS_FILE = "./data/orders.json"
-POLICIES_FILE = "./data/policies.json"
-FAQS_FILE = "./data/faqs.json"
+DATA_DIR = "./data"
+PRODUCTS_FILE = f"{DATA_DIR}/products.json"
+USERS_FILE = f"{DATA_DIR}/users.json"
+ORDERS_FILE = f"{DATA_DIR}/orders.json"
+POLICIES_FILE = f"{DATA_DIR}/policies.json"
+FAQS_FILE = f"{DATA_DIR}/faqs.json"
 
 # Create data directory if it doesn't exist
-os.makedirs("./data", exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
+
+# Helper functions
+def create_product_text_for_embedding(product):
+    """Create text representation of product for embedding"""
+    category_name = product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown"
+
+    product_text = f"{product['title']}: {product.get('description', '')} Price: {product['price']}. Category: {category_name}."
+
+    # Add variations info if available
+    if "variations" in product and product["variations"]:
+        variations_text = ", ".join([f"{var.get('sku', '')}: {var.get('price', 0)}" for var in product["variations"]])
+        product_text += f" Variations: {variations_text}"
+
+    return product_text
+
+def save_json_file(file_path, data):
+    """Save data to JSON file"""
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+def load_json_file(file_path):
+    """Load data from JSON file"""
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
 
 # Function to fetch products from API
 def fetch_products_from_api():
@@ -119,8 +139,7 @@ def initialize_data_files():
         print(f"Fetched {len(api_products)} products from API")
 
         # Save to file
-        with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
-            json.dump(api_products, f, ensure_ascii=False, indent=4)
+        save_json_file(PRODUCTS_FILE, api_products)
 
         # Add products to vector database if enabled
         if VECTOR_DB_ENABLED:
@@ -134,22 +153,7 @@ def initialize_data_files():
 
                 # Add new products
                 for product in api_products:
-                    # Extract category name
-                    category_name = product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown"
-
-                    # Extract image URLs
-                    image_urls = []
-                    if "images" in product and product["images"]:
-                        image_urls = [img["filePath"] for img in product["images"] if "filePath" in img]
-
-                    # Create product text for embedding
-                    product_text = f"{product['title']}: {product.get('description', '')} Price: {product['price']}. Category: {category_name}. Image: {image_urls[0] if image_urls else 'No image'}"
-
-                    # Add variations info if available
-                    if "variations" in product and product["variations"]:
-                        variations_text = ", ".join([f"{var.get('sku', '')}: {var.get('price', 0)}" for var in product["variations"]])
-                        product_text += f" Variations: {variations_text}"
-
+                    product_text = create_product_text_for_embedding(product)
                     product_collection.add(
                         documents=[product_text],
                         metadatas=[product],
@@ -161,58 +165,12 @@ def initialize_data_files():
     else:
         # If API fetch fails, create empty products file
         if not os.path.exists(PRODUCTS_FILE):
-            with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
-                json.dump([], f, ensure_ascii=False, indent=4)
+            save_json_file(PRODUCTS_FILE, [])
 
-    # Sample users
-    if not os.path.exists(USERS_FILE):
-        sample_users = []
-        with open(USERS_FILE, "w", encoding="utf-8") as f:
-            json.dump(sample_users, f, ensure_ascii=False, indent=4)
-
-    # Sample orders
-    if not os.path.exists(ORDERS_FILE):
-        sample_orders = []
-        with open(ORDERS_FILE, "w", encoding="utf-8") as f:
-            json.dump(sample_orders, f, ensure_ascii=False, indent=4)
-
-    # Sample policies
-    if not os.path.exists(POLICIES_FILE):
-        sample_policies = []
-        with open(POLICIES_FILE, "w", encoding="utf-8") as f:
-            json.dump(sample_policies, f, ensure_ascii=False, indent=4)
-
-        # Add policies to vector database if enabled
-        if VECTOR_DB_ENABLED:
-            try:
-                for policy in sample_policies:
-                    policy_collection.add(
-                        documents=[f"{policy['title']}: {policy['content']}"],
-                        metadatas=[policy],
-                        ids=[policy["id"]]
-                    )
-                print(f"Added {len(sample_policies)} policies to vector database")
-            except Exception as e:
-                print(f"Error adding policies to vector database: {e}")
-
-    # Sample FAQs
-    if not os.path.exists(FAQS_FILE):
-        sample_faqs = []
-        with open(FAQS_FILE, "w", encoding="utf-8") as f:
-            json.dump(sample_faqs, f, ensure_ascii=False, indent=4)
-
-        # Add FAQs to vector database if enabled
-        if VECTOR_DB_ENABLED:
-            try:
-                for faq in sample_faqs:
-                    faq_collection.add(
-                        documents=[f"Câu hỏi: {faq['question']} Trả lời: {faq['answer']}"],
-                        metadatas=[faq],
-                        ids=[faq["id"]]
-                    )
-                print(f"Added {len(sample_faqs)} FAQs to vector database")
-            except Exception as e:
-                print(f"Error adding FAQs to vector database: {e}")
+    # Initialize other data files with empty arrays if they don't exist
+    for file_path in [USERS_FILE, ORDERS_FILE, POLICIES_FILE, FAQS_FILE]:
+        if not os.path.exists(file_path):
+            save_json_file(file_path, [])
 
 # Hàm tiện ích để quản lý dữ liệu trong vector database
 def add_product_to_vector_db(product):
@@ -221,21 +179,11 @@ def add_product_to_vector_db(product):
         return False
 
     try:
-        # Extract category name
-        category_name = product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown"
-
-        # Create product text for embedding
-        product_text = f"{product['title']}: {product.get('description', '')} Price: {product['price']}. Category: {category_name}."
-
-        # Add variations info if available
-        if "variations" in product and product["variations"]:
-            variations_text = ", ".join([f"{var.get('sku', '')}: {var.get('price', 0)}" for var in product["variations"]])
-            product_text += f" Variations: {variations_text}"
-
+        product_text = create_product_text_for_embedding(product)
         product_collection.add(
             documents=[product_text],
             metadatas=[product],
-            ids=[str(product["id"])]  # Convert ID to string for ChromaDB
+            ids=[str(product["id"])]
         )
         return True
     except Exception as e:
@@ -308,13 +256,9 @@ def delete_from_vector_db(collection_name, doc_id):
         print(f"Error deleting from vector database: {e}")
         return False
 
-# Initialize data files
-initialize_data_files()
-
 # Database functions
 def get_products():
-    with open(PRODUCTS_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return load_json_file(PRODUCTS_FILE)
 
 def get_product_by_id(product_id):
     """Get a product by ID (accepts both string and integer IDs)"""
@@ -341,8 +285,7 @@ def add_product(product):
     products.append(product)
 
     # Lưu vào file
-    with open(PRODUCTS_FILE, "w", encoding="utf-8") as f:
-        json.dump(products, f, ensure_ascii=False, indent=4)
+    save_json_file(PRODUCTS_FILE, products)
 
     # Thêm vào vector database
     add_product_to_vector_db(product)

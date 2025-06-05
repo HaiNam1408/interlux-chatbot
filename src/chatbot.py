@@ -1,19 +1,16 @@
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
-from typing import List, Dict, Any, Optional
-import json
+from typing import Dict, Any
 
 from .database import (
     search_products,
     search_policies,
     search_faqs,
-    get_user_orders,
-    get_product_by_id
+    get_user_orders
 )
 from .models import UserSession
 
-# Load environment variables
 load_dotenv()
 
 # Configure Gemini API
@@ -107,11 +104,42 @@ class Chatbot:
             context["faqs"] = faqs
 
         elif intent == "product_recommendation":
-            # Tìm kiếm sản phẩm dựa trên mô tả nhu cầu
             products = search_products(message)
             context["recommended_products"] = products
 
         return context
+
+    def format_product_info(self, product):
+        """Helper function to format product information"""
+        info = f"- Tên: {product['title']}\n"
+        info += f"  Mô tả: {product.get('description', 'Không có mô tả')}\n"
+        info += f"  Giá: {product['price']} VND"
+        if product.get('percentOff', 0) > 0:
+            info += f" (Giảm giá: {product['percentOff']}%)\n"
+        else:
+            info += "\n"
+
+        # Thêm thông tin danh mục
+        if "category" in product and "name" in product["category"]:
+            info += f"  Danh mục: {product['category']['name']}\n"
+
+        # Thêm thông tin biến thể nếu có
+        if "variations" in product and product["variations"]:
+            info += "  Biến thể:\n"
+            for variation in product["variations"][:3]:  # Giới hạn 3 biến thể đầu tiên
+                info += f"    * {variation.get('sku', 'Không xác định')}: {variation.get('price', 0)} VND"
+                if variation.get('percentOff', 0) > 0:
+                    info += f" (Giảm giá: {variation['percentOff']}%)"
+                info += "\n"
+
+        # Thêm thông tin hình ảnh chi tiết với URL
+        if "images" in product and product["images"]:
+            info += "  Hình ảnh:\n"
+            for idx, image in enumerate(product["images"]):
+                if "filePath" in image and image["filePath"]:
+                    info += f"    * Hình {idx+1}: {image['filePath']}\n"
+
+        return info
 
     def format_context_for_prompt(self, context: Dict[str, Any]) -> str:
         """Định dạng ngữ cảnh để đưa vào prompt"""
@@ -120,33 +148,7 @@ class Chatbot:
         if "products" in context and context["products"]:
             formatted_context += "\nSản phẩm:\n"
             for product in context["products"]:
-                formatted_context += f"- Tên: {product['title']}\n"
-                formatted_context += f"  Mô tả: {product.get('description', 'Không có mô tả')}\n"
-                formatted_context += f"  Giá: {product['price']} VND"
-                if product.get('percentOff', 0) > 0:
-                    formatted_context += f" (Giảm giá: {product['percentOff']}%)\n"
-                else:
-                    formatted_context += "\n"
-
-                # Thêm thông tin danh mục
-                if "category" in product and "name" in product["category"]:
-                    formatted_context += f"  Danh mục: {product['category']['name']}\n"
-
-                # Thêm thông tin biến thể nếu có
-                if "variations" in product and product["variations"]:
-                    formatted_context += "  Biến thể:\n"
-                    for variation in product["variations"][:3]:  # Giới hạn 3 biến thể đầu tiên
-                        formatted_context += f"    * {variation.get('sku', 'Không xác định')}: {variation.get('price', 0)} VND"
-                        if variation.get('percentOff', 0) > 0:
-                            formatted_context += f" (Giảm giá: {variation['percentOff']}%)"
-                        formatted_context += "\n"
-
-                # Thêm thông tin hình ảnh chi tiết với URL
-                if "images" in product and product["images"]:
-                    formatted_context += "  Hình ảnh:\n"
-                    for idx, image in enumerate(product["images"]):
-                        if "filePath" in image and image["filePath"]:
-                            formatted_context += f"    * Hình {idx+1}: {image['filePath']}\n"
+                formatted_context += self.format_product_info(product)
 
         if "policies" in context and context["policies"]:
             formatted_context += "\nChính sách:\n"
@@ -162,34 +164,7 @@ class Chatbot:
         if "recommended_products" in context and context["recommended_products"]:
             formatted_context += "\nSản phẩm được đề xuất:\n"
             for product in context["recommended_products"]:
-                # Sử dụng cùng định dạng với sản phẩm thông thường
-                formatted_context += f"- Tên: {product['title']}\n"
-                formatted_context += f"  Mô tả: {product.get('description', 'Không có mô tả')}\n"
-                formatted_context += f"  Giá: {product['price']} VND"
-                if product.get('percentOff', 0) > 0:
-                    formatted_context += f" (Giảm giá: {product['percentOff']}%)\n"
-                else:
-                    formatted_context += "\n"
-
-                # Thêm thông tin danh mục
-                if "category" in product and "name" in product["category"]:
-                    formatted_context += f"  Danh mục: {product['category']['name']}\n"
-
-                # Thêm thông tin biến thể nếu có
-                if "variations" in product and product["variations"]:
-                    formatted_context += "  Biến thể:\n"
-                    for variation in product["variations"][:3]:  # Giới hạn 3 biến thể đầu tiên
-                        formatted_context += f"    * {variation.get('sku', 'Không xác định')}: {variation.get('price', 0)} VND"
-                        if variation.get('percentOff', 0) > 0:
-                            formatted_context += f" (Giảm giá: {variation['percentOff']}%)"
-                        formatted_context += "\n"
-
-                # Thêm thông tin hình ảnh chi tiết với URL
-                if "images" in product and product["images"]:
-                    formatted_context += "  Hình ảnh:\n"
-                    for idx, image in enumerate(product["images"]):
-                        if "filePath" in image and image["filePath"]:
-                            formatted_context += f"    * Hình {idx+1}: {image['filePath']}\n"
+                formatted_context += self.format_product_info(product)
 
         if "orders" in context and context["orders"]:
             formatted_context += "\nĐơn hàng:\n"
@@ -218,6 +193,7 @@ class Chatbot:
 
         # Xử lý đặc biệt cho quản lý đơn hàng
         if intent == "order_management" and "user_id" in context:
+            print("Order management")
             user_id = context["user_id"]
             orders = get_user_orders(user_id)
             context["orders"] = orders
