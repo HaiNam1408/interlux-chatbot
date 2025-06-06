@@ -112,7 +112,7 @@ def fetch_products_from_api():
     api_url = "https://interlux-be-dwbhhhf7gkemhzbm.eastasia-01.azurewebsites.net/api/v1/client/product"
     params = {
         "page": 1,
-        "limit": 100,
+        "limit": 1000,
         "sortBy": "createdAt",
         "sortDirection": "desc"
     }

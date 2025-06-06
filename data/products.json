@@ -5,17 +5,17 @@
         "slug": "executive-office-desk",
         "price": 1200,
         "percentOff": 0,
-        "sold": 11,
+        "sold": 19,
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613713-smvu5fia.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1749053907880-32ecuhz10r.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749053907880-32ecuhz10r.jpg"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613713-qyv8qrqt.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1749053907888-1h389yp31e.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749053907888-1h389yp31e.jpg"
             }
         ],
         "category": {
@@ -29,7 +29,7 @@
                 "sku": "executive-office-desk-default",
                 "price": 1200,
                 "percentOff": 0,
-                "inventory": 48,
+                "inventory": 40,
                 "images": [
                     {
                         "type": "image",
@@ -118,17 +118,17 @@
         "slug": "manhattan-tv-unit",
         "price": 1850,
         "percentOff": 5,
-        "sold": 24,
+        "sold": 27,
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613665-4ua3a63r.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1748966810994-5qtkl5irdk.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1748966810994-5qtkl5irdk.jpg"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613665-jh4gd1m8.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1748966837632-nbc9sgl8ia.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1748966837632-nbc9sgl8ia.jpg"
             }
         ],
         "category": {
@@ -157,27 +157,6 @@
                 ],
                 "isDefault": false,
                 "finalPrice": 1805
-            },
-            {
-                "id": 37,
-                "sku": "manhattan-tv-unit-default",
-                "price": 1850,
-                "percentOff": 5,
-                "inventory": 49,
-                "images": [
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613665-4ua3a63r.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    },
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    }
-                ],
-                "isDefault": true,
-                "finalPrice": 1757.5
             },
             {
                 "id": 39,
@@ -220,6 +199,27 @@
                 ],
                 "isDefault": false,
                 "finalPrice": 1900
+            },
+            {
+                "id": 37,
+                "sku": "manhattan-tv-unit-default",
+                "price": 1850,
+                "percentOff": 5,
+                "inventory": 46,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1757.5
             }
         ],
         "createdAt": "2025-05-18T09:30:13.671Z",
@@ -232,7 +232,18 @@
         "price": 1500,
         "percentOff": 10,
         "sold": 2,
-        "images": [],
+        "images": [
+            {
+                "type": "image",
+                "fileName": "product/1748966920548-bpzcle9xre.webp",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1748966920548-bpzcle9xre.webp"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1748966920548-ayr27x4hcn.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1748966920548-ayr27x4hcn.jpg"
+            }
+        ],
         "category": {
             "id": 17,
             "name": "Dining Tables",
@@ -333,17 +344,17 @@
         "slug": "artisan-dining-table",
         "price": 2800,
         "percentOff": 0,
-        "sold": 8,
+        "sold": 11,
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613566-dqmrk9zl.jpg",
-                "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                "fileName": "product/1749054564832-lgbx7khmqa.png",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054564832-lgbx7khmqa.png"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613566-ue48fb4e.jpg",
-                "filePath": "https://artisan-production.ams3.cdn.digitaloceanspaces.com/Latus_Table_Inspiration_1_323e92df13.png"
+                "fileName": "product/1749054564833-soaux4ucu8.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054564833-soaux4ucu8.jpg"
             }
         ],
         "category": {
@@ -420,7 +431,7 @@
                 "sku": "artisan-dining-table-white",
                 "price": 2850,
                 "percentOff": 0,
-                "inventory": 26,
+                "inventory": 23,
                 "images": [
                     {
                         "type": "image",
@@ -605,13 +616,13 @@
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613469-9ibras7c.jpg",
-                "filePath": "https://truongthang.vn/wp-content/uploads/2024/03/Harmony-bed-1000-x-1000-3.png"
+                "fileName": "product/1749054758462-ysahahswti.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054758462-ysahahswti.jpg"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613469-sz560dsm.jpg",
-                "filePath": "https://www.lakdi.com/cdn/shop/files/King_Size_Wooden_Bed_in_Light_Grey_Fabric_Single_Double_Head-back_with_Hydraulic_Storage_-_-3759224.jpg?v=1744030872&width=1200"
+                "fileName": "product/1749054758463-ayg916hpio.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054758463-ayg916hpio.jpg"
             }
         ],
         "category": {
@@ -760,13 +771,13 @@
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613420-c9bsam4n.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1749055080939-3omdl8dr1d.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749055080939-3omdl8dr1d.jpg"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613420-lqx00hdq.jpg",
-                "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                "fileName": "product/1749055080940-6dndzqitmk.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749055080940-6dndzqitmk.jpg"
             }
         ],
         "category": {
@@ -915,13 +926,18 @@
         "images": [
             {
                 "type": "image",
-                "fileName": "product/1747560613368-dlef14db.jpg",
-                "filePath": "https://www.amazon.ca/Acanva-Minimalist-Rounded-Wool-Like-Upholstered/dp/B0B31LHLM2"
+                "fileName": "product/1749054831158-wdihgxezd4.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054831158-wdihgxezd4.jpg"
             },
             {
                 "type": "image",
-                "fileName": "product/1747560613368-t8mcp5sj.jpg",
-                "filePath": "https://www.amazon.com.au/Acanva-Modern-Minimalist-Rounded-Upholstered/dp/B0B31LHLM2"
+                "fileName": "product/1749054831159-i4pcgawagj.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054831159-i4pcgawagj.jpg"
+            },
+            {
+                "type": "image",
+                "fileName": "product/1749054831159-8nl4br2rz7.jpg",
+                "filePath": "https://pub-36ed7b28158f4f0ba7b49228bb61739e.r2.dev/product/1749054831159-8nl4br2rz7.jpg"
             }
         ],
         "category": {
@@ -1024,7 +1040,7 @@
         "slug": "milano-corner-sofa",
         "price": 2500,
         "percentOff": 10,
-        "sold": 6,
+        "sold": 9,
         "images": [
             {
                 "type": "image",
@@ -1183,7 +1199,7 @@
                 "sku": "milano-corner-sofa-white",
                 "price": 2550,
                 "percentOff": 10,
-                "inventory": 24,
+                "inventory": 21,
                 "images": [
                     {
                         "type": "image",

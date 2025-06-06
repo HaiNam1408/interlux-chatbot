@@ -47,6 +47,11 @@ function sendMessage() {
             // Add bot response to chat
             addMessageToChat('bot', data.response);
 
+            // Add product cards if data exists
+            if (data.data && data.data.length > 0) {
+                addProductCards(data.data);
+            }
+
             // Store user ID if not already stored
             if (!userId && data.user_id) {
                 userId = data.user_id;
@@ -162,6 +167,73 @@ function formatMessageContent(content) {
     }
 
     return formattedContent;
+}
+
+function addProductCards(products) {
+    if (!products || products.length === 0) return;
+
+    const productCardsContainer = document.createElement('div');
+    productCardsContainer.className = 'product-cards-container';
+
+    products.forEach(product => {
+        const productCard = createModernProductCard(product);
+        productCardsContainer.appendChild(productCard);
+    });
+
+    chatMessages.appendChild(productCardsContainer);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function createModernProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'modern-product-card';
+    card.onclick = () => {
+        // Redirect to product detail page
+        window.open(`/product/${product.slug || product.id}`, '_blank');
+    };
+
+    // Format price
+    const formattedPrice = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    }).format(product.price);
+
+    let originalPriceHtml = '';
+    if (product.percentOff > 0) {
+        const formattedOriginalPrice = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        }).format(product.originalPrice);
+        originalPriceHtml = `<span class="original-price">${formattedOriginalPrice}</span>`;
+    }
+
+    let discountBadge = '';
+    if (product.percentOff > 0) {
+        discountBadge = `<div class="discount-badge">-${product.percentOff}%</div>`;
+    }
+
+    card.innerHTML = `
+        ${discountBadge}
+        <div class="product-image-container">
+            <img src="${product.image || 'https://via.placeholder.com/300x200?text=No+Image'}"
+                 alt="${product.title}"
+                 class="product-image"
+                 onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+        </div>
+        <div class="product-info">
+            <h4 class="product-title">${product.title}</h4>
+            <p class="product-category">${product.category}</p>
+            <div class="product-pricing">
+                <span class="current-price">${formattedPrice}</span>
+                ${originalPriceHtml}
+            </div>
+            <div class="product-stats">
+                <span class="sold-count">Đã bán: ${product.sold || 0}</span>
+            </div>
+        </div>
+    `;
+
+    return card;
 }
 
 function createProductCard(productInfo) {

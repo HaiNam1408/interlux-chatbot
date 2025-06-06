@@ -85,11 +85,12 @@ async def chat(
     session = get_or_create_session(user_id)
     session.add_message("user", message)
 
-    response = chatbot.process_message(message, session)
-    session.add_message("bot", response)
+    structured_response = chatbot.process_message(message, session)
+    session.add_message("bot", structured_response["message"])
 
     return {
-        "response": response,
+        "response": structured_response["message"],
+        "data": structured_response["data"],
         "user_id": user_id,
         "history": session.get_messages()
     }

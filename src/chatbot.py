@@ -1,7 +1,7 @@
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 from .database import (
     search_products,
@@ -39,22 +39,18 @@ class Chatbot:
         - KHÔNG ĐƯỢC TẠO RA hoặc BỊA RA bất kỳ thông tin nào không có trong dữ liệu.
         - Nếu không có thông tin hoặc không biết câu trả lời, hãy thành thật nói rằng bạn không có thông tin đó.
         - Nếu thông tin không chính xác hoặc không đầy đủ, hãy nói rõ rằng bạn chỉ có thông tin giới hạn.
+        - Khi khách hàng yêu cầu tư vấn sản phẩm, hãy hỏi từ yêu cầu một, không hỏi nhiều thông tin cùng lúc, hỏi thông tin tối đa 3 lần.
 
         ĐỊNH DẠNG PHẢN HỒI:
         - Sử dụng định dạng Markdown để trình bày thông tin rõ ràng, có cấu trúc.
         - Sử dụng tiêu đề, danh sách, và đoạn văn để phân chia thông tin.
         - KHÔNG bao giờ cung cấp thông tin mơ hồ hoặc không có giá trị thực tế.
 
-        HIỂN THỊ HÌNH ẢNH:
-        - Khi cần hiển thị hình ảnh, LUÔN đặt tất cả hình ảnh vào cuối phản hồi.
-        - Sử dụng format đặc biệt sau để hiển thị hình ảnh:
-          ```image-gallery
-          [Tiêu đề hình ảnh 1](URL_hình_ảnh_1)
-          [Tiêu đề hình ảnh 2](URL_hình_ảnh_2)
-          ...
-          ```
-        - Đảm bảo mỗi URL hình ảnh nằm trên một dòng riêng biệt trong khối image-gallery.
-        - Luôn đặt khối image-gallery ở cuối phản hồi, sau phần nội dung chính.
+        ĐỊNH DẠNG PHẢN HỒI STRUCTURED:
+        - Chỉ trả lời bằng văn bản thông thường, KHÔNG sử dụng format đặc biệt nào.
+        - KHÔNG đề cập đến hình ảnh hoặc URL trong phản hồi văn bản.
+        - Tập trung vào việc cung cấp thông tin hữu ích và tư vấn cho khách hàng.
+        - Hệ thống sẽ tự động xử lý việc hiển thị sản phẩm dựa trên ngữ cảnh.
         """
 
     def classify_intent(self, message: str) -> str:
@@ -132,12 +128,8 @@ class Chatbot:
                     info += f" (Giảm giá: {variation['percentOff']}%)"
                 info += "\n"
 
-        # Thêm thông tin hình ảnh chi tiết với URL
-        if "images" in product and product["images"]:
-            info += "  Hình ảnh:\n"
-            for idx, image in enumerate(product["images"]):
-                if "filePath" in image and image["filePath"]:
-                    info += f"    * Hình {idx+1}: {image['filePath']}\n"
+        # Không hiển thị thông tin hình ảnh trong text response
+        # Hình ảnh sẽ được xử lý trong structured response
 
         return info
 
@@ -183,8 +175,8 @@ class Chatbot:
 
         return formatted_context
 
-    def process_message(self, message: str, session: UserSession) -> str:
-        """Xử lý tin nhắn từ người dùng và trả về phản hồi"""
+    def process_message(self, message: str, session: UserSession) -> Dict[str, Any]:
+        """Xử lý tin nhắn từ người dùng và trả về phản hồi có cấu trúc"""
         # Phân loại ý định
         intent = self.classify_intent(message)
 
@@ -227,5 +219,79 @@ class Chatbot:
 
         # Gọi Gemini API
         response = self.model.generate_content(prompt)
+        message_text = response.text.strip()
 
-        return response.text.strip()
+        # Tạo structured response
+        structured_response = {
+            "message": message_text,
+            "data": []
+        }
+
+        # Thêm data dựa trên intent và context
+        if intent in ["product_inquiry", "product_recommendation"] and "products" in context:
+            structured_response["data"] = self.format_products_data(context["products"])
+        elif intent == "product_recommendation" and "recommended_products" in context:
+            structured_response["data"] = self.format_products_data(context["recommended_products"])
+        elif intent == "order_management" and "orders" in context:
+            structured_response["data"] = self.format_orders_data(context["orders"])
+
+        return structured_response
+
+    def format_products_data(self, products: List[Dict]) -> List[Dict]:
+        """Format products data for structured response"""
+        formatted_products = []
+        for product in products:
+            # Lấy hình ảnh đầu tiên
+            image_url = None
+            if "images" in product and product["images"]:
+                image_url = product["images"][0].get("filePath") if "filePath" in product["images"][0] else None
+
+            # Lấy giá từ variation mặc định hoặc giá gốc
+            price = product.get("price", 0)
+            if "variations" in product and product["variations"]:
+                default_variation = next((var for var in product["variations"] if var.get("isDefault", False)), None)
+                if default_variation:
+                    price = default_variation.get("finalPrice", default_variation.get("price", price))
+
+            formatted_product = {
+                "id": product["id"],
+                "title": product["title"],
+                "description": product.get("description", ""),
+                "price": price,
+                "originalPrice": product.get("price", 0),
+                "percentOff": product.get("percentOff", 0),
+                "image": image_url,
+                "category": product["category"]["name"] if "category" in product and "name" in product["category"] else "Unknown",
+                "slug": product.get("slug", ""),
+                "sold": product.get("sold", 0)
+            }
+            formatted_products.append(formatted_product)
+
+        return formatted_products
+
+    def format_orders_data(self, orders: List[Dict]) -> List[Dict]:
+        """Format orders data for structured response"""
+        formatted_orders = []
+        for order in orders:
+            formatted_order = {
+                "id": order["id"],
+                "status": order["status"],
+                "total_amount": order["total_amount"],
+                "created_at": order.get("created_at", ""),
+                "products": []
+            }
+
+            for product in order.get("products", []):
+                formatted_product = {
+                    "id": product.get("product_id", ""),
+                    "title": product.get("title", ""),
+                    "quantity": product.get("quantity", 0),
+                    "price": product.get("finalPrice", product.get("price", 0)),
+                    "image": product.get("image", None),
+                    "variation": product.get("variation", "")
+                }
+                formatted_order["products"].append(formatted_product)
+
+            formatted_orders.append(formatted_order)
+
+        return formatted_orders
