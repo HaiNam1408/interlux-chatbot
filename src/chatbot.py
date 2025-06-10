@@ -33,7 +33,6 @@ class Chatbot:
         5. Gợi ý sản phẩm: Đề xuất sản phẩm phù hợp dựa trên nhu cầu của khách hàng.
 
         QUAN TRỌNG:
-        - Trả lời bằng CÙNG NGÔN NGỮ mà khách hàng sử dụng (tiếng Việt hoặc tiếng Anh).
         - Trả lời một cách lịch sự, chuyên nghiệp và hữu ích.
         - TUYỆT ĐỐI CHỈ sử dụng thông tin từ cơ sở dữ liệu được cung cấp.
         - KHÔNG ĐƯỢC TẠO RA hoặc BỊA RA bất kỳ thông tin nào không có trong dữ liệu.
@@ -109,27 +108,23 @@ class Chatbot:
         """Helper function to format product information"""
         info = f"- Tên: {product['title']}\n"
         info += f"  Mô tả: {product.get('description', 'Không có mô tả')}\n"
-        info += f"  Giá: {product['price']} VND"
+        info += f"  Giá: {product['price']} USD"
         if product.get('percentOff', 0) > 0:
             info += f" (Giảm giá: {product['percentOff']}%)\n"
         else:
             info += "\n"
 
-        # Thêm thông tin danh mục
         if "category" in product and "name" in product["category"]:
             info += f"  Danh mục: {product['category']['name']}\n"
 
-        # Thêm thông tin biến thể nếu có
         if "variations" in product and product["variations"]:
             info += "  Biến thể:\n"
-            for variation in product["variations"][:3]:  # Giới hạn 3 biến thể đầu tiên
-                info += f"    * {variation.get('sku', 'Không xác định')}: {variation.get('price', 0)} VND"
+            for variation in product["variations"][:3]:
+                info += f"    * {variation.get('sku', 'Không xác định')}: {variation.get('price', 0)} USD"
                 if variation.get('percentOff', 0) > 0:
                     info += f" (Giảm giá: {variation['percentOff']}%)"
                 info += "\n"
 
-        # Không hiển thị thông tin hình ảnh trong text response
-        # Hình ảnh sẽ được xử lý trong structured response
 
         return info
 
@@ -163,44 +158,33 @@ class Chatbot:
             for order in context["orders"]:
                 formatted_context += f"- Mã đơn hàng: {order['id']}\n"
                 formatted_context += f"  Trạng thái: {order['status']}\n"
-                formatted_context += f"  Tổng tiền: {order['total_amount']} VND\n"
+                formatted_context += f"  Tổng tiền: {order['total_amount']} USD\n"
                 formatted_context += "  Sản phẩm:\n"
                 for product in order["products"]:
                     formatted_context += f"    + {product.get('title', 'Sản phẩm')} - Số lượng: {product['quantity']}"
                     if "variation" in product:
                         formatted_context += f" - Biến thể: {product['variation']}"
                     if "finalPrice" in product:
-                        formatted_context += f" - Giá: {product['finalPrice']} VND"
+                        formatted_context += f" - Giá: {product['finalPrice']} USD"
                     formatted_context += "\n"
 
         return formatted_context
 
     def process_message(self, message: str, session: UserSession) -> Dict[str, Any]:
         """Xử lý tin nhắn từ người dùng và trả về phản hồi có cấu trúc"""
-        # Phân loại ý định
         intent = self.classify_intent(message)
 
-        # Lấy ngữ cảnh từ session
         context = session.context
-
-        # Xử lý đặc biệt cho quản lý đơn hàng
         if intent == "order_management" and "user_id" in context:
             print("Order management")
             user_id = context["user_id"]
             orders = get_user_orders(user_id)
             context["orders"] = orders
 
-        # Truy xuất thông tin liên quan
         retrieved_context = self.retrieve_context(message, intent)
-
-        # Cập nhật ngữ cảnh
         context.update(retrieved_context)
         session.context = context
-
-        # Định dạng ngữ cảnh cho prompt
         formatted_context = self.format_context_for_prompt(context)
-
-        # Lấy lịch sử trò chuyện
         chat_history = session.get_chat_history()
 
         # Tạo prompt
@@ -217,17 +201,14 @@ class Chatbot:
         Trả lời:
         """
 
-        # Gọi Gemini API
         response = self.model.generate_content(prompt)
         message_text = response.text.strip()
 
-        # Tạo structured response
         structured_response = {
             "message": message_text,
             "data": []
         }
 
-        # Thêm data dựa trên intent và context
         if intent in ["product_inquiry", "product_recommendation"] and "products" in context:
             structured_response["data"] = self.format_products_data(context["products"])
         elif intent == "product_recommendation" and "recommended_products" in context:

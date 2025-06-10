@@ -193,16 +193,16 @@ function createModernProductCard(product) {
     };
 
     // Format price
-    const formattedPrice = new Intl.NumberFormat('vi-VN', {
+    const formattedPrice = new Intl.NumberFormat('us-US', {
         style: 'currency',
-        currency: 'VND'
+        currency: 'USD'
     }).format(product.price);
 
     let originalPriceHtml = '';
     if (product.percentOff > 0) {
-        const formattedOriginalPrice = new Intl.NumberFormat('vi-VN', {
+        const formattedOriginalPrice = new Intl.NumberFormat('us-US', {
             style: 'currency',
-            currency: 'VND'
+            currency: 'USD'
         }).format(product.originalPrice);
         originalPriceHtml = `<span class="original-price">${formattedOriginalPrice}</span>`;
     }

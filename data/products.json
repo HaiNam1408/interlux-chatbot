@@ -5,7 +5,7 @@
         "slug": "executive-office-desk",
         "price": 1200,
         "percentOff": 0,
-        "sold": 19,
+        "sold": 20,
         "images": [
             {
                 "type": "image",
@@ -29,7 +29,7 @@
                 "sku": "executive-office-desk-default",
                 "price": 1200,
                 "percentOff": 0,
-                "inventory": 40,
+                "inventory": 39,
                 "images": [
                     {
                         "type": "image",
@@ -118,7 +118,7 @@
         "slug": "manhattan-tv-unit",
         "price": 1850,
         "percentOff": 5,
-        "sold": 27,
+        "sold": 30,
         "images": [
             {
                 "type": "image",
@@ -157,6 +157,27 @@
                 ],
                 "isDefault": false,
                 "finalPrice": 1805
+            },
+            {
+                "id": 37,
+                "sku": "manhattan-tv-unit-default",
+                "price": 1850,
+                "percentOff": 5,
+                "inventory": 43,
+                "images": [
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-4ua3a63r.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    },
+                    {
+                        "type": "image",
+                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
+                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
+                    }
+                ],
+                "isDefault": true,
+                "finalPrice": 1757.5
             },
             {
                 "id": 39,
@@ -199,27 +220,6 @@
                 ],
                 "isDefault": false,
                 "finalPrice": 1900
-            },
-            {
-                "id": 37,
-                "sku": "manhattan-tv-unit-default",
-                "price": 1850,
-                "percentOff": 5,
-                "inventory": 46,
-                "images": [
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613665-4ua3a63r.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    },
-                    {
-                        "type": "image",
-                        "fileName": "product/1747560613665-jh4gd1m8.jpg",
-                        "filePath": "https://cdn.store-assets.com/s/262752/i/32874272.jpg"
-                    }
-                ],
-                "isDefault": true,
-                "finalPrice": 1757.5
             }
         ],
         "createdAt": "2025-05-18T09:30:13.671Z",
@@ -1040,7 +1040,7 @@
         "slug": "milano-corner-sofa",
         "price": 2500,
         "percentOff": 10,
-        "sold": 9,
+        "sold": 10,
         "images": [
             {
                 "type": "image",
@@ -1199,7 +1199,7 @@
                 "sku": "milano-corner-sofa-white",
                 "price": 2550,
                 "percentOff": 10,
-                "inventory": 21,
+                "inventory": 20,
                 "images": [
                     {
                         "type": "image",
